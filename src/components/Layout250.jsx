@@ -174,7 +174,7 @@ const CardWithAnimation = ({
         }
         variant="link"
         size="link"
-        className="text-emerald-600 font-medium hover:text-emerald-800 transition-colors duration-300"
+        className="text-emerald-600 text-lg font-bold tracking-tighter hover:text-emerald-800 transition-colors duration-300"
       >
         {buttonText}
       </Button>

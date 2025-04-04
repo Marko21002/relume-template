@@ -443,10 +443,10 @@ const PricingPlanStyled = ({ plan }: { plan: PricingPlan }) => {
         transition={{ duration: 0.5, delay: 0.9 }}
         viewport={{ once: true }}
       >
-        <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
           <Button
             {...plan.button}
-            className="w-full rounded-none bg-emerald-500 text-zinc-900 hover:bg-emerald-400 transition-colors duration-300 font-medium uppercase tracking-wider text-sm py-3"
+            className="w-full rounded-none bg-emerald-500 text-zinc-900 hover:bg-emerald-400 transition-colors duration-300 text-lg font-bold tracking-tighter normal-case py-4"
           >
             {plan.button.title}
           </Button>

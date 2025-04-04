@@ -106,12 +106,17 @@ export function Footer1() {
                   onChange={formState.handleSetEmail}
                   className="bg-zinc-800 border-zinc-700 text-white"
                 />
-                <Button
-                  title="Join"
-                  className="rounded-none bg-emerald-500 text-zinc-900 px-6 py-2 hover:bg-emerald-400 transition-colors duration-300 font-medium uppercase tracking-wider text-sm"
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  Join
-                </Button>
+                  <Button
+                    title="join"
+                    className="rounded-none bg-emerald-500 text-zinc-900 px-6 py-2 hover:bg-emerald-400 transition-colors duration-300 text-lg font-bold tracking-tighter normal-case"
+                  >
+                    Join
+                  </Button>
+                </motion.div>
               </form>
               <p className="text-xs text-zinc-400">
                 By subscribing, you agree to our Privacy Policy and consent to

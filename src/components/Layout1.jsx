@@ -96,25 +96,25 @@ export function Layout1() {
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <Button
-                  title="Learn More"
+                  title="learn more"
                   variant="secondary"
-                  className="rounded-none bg-emerald-500 text-white px-8 py-3 hover:bg-emerald-400 transition-colors duration-300 font-medium uppercase tracking-wider text-sm"
+                  className="rounded-none bg-emerald-500 text-white px-8 py-3 hover:bg-emerald-400 transition-colors duration-300 text-lg font-bold tracking-tighter normal-case"
                 >
-                  Learn More
+                  Learn more
                 </Button>
               </motion.div>
               <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <Button
-                  title="Contact"
+                  title="contact"
                   variant="link"
                   size="link"
                   iconRight={
                     <RxChevronRight className="group-hover:translate-x-1 transition-transform duration-300" />
                   }
-                  className="text-emerald-600 font-medium hover:text-emerald-800 transition-colors duration-300"
+                  className="text-emerald-600 text-lg font-bold tracking-tighter hover:text-emerald-800 transition-colors duration-300"
                 >
                   Contact
                 </Button>
