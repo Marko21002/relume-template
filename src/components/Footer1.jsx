@@ -9,6 +9,7 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const useForm = () => {
   const [email, setEmail] = useState("");
@@ -29,22 +30,70 @@ const useForm = () => {
 export function Footer1() {
   const formState = useForm();
   return (
-    <footer id="relume" className="px-[5%] py-12 md:py-18 lg:py-20">
-      <div className="container">
+    <footer
+      id="relume"
+      className="bg-zinc-900 text-white px-[5%] py-16 md:py-20 lg:py-24 relative overflow-hidden"
+    >
+      {/* Decorative background elements */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400/0 via-emerald-400 to-emerald-400/0"></div>
+      <motion.div
+        initial={{ scale: 0.85, opacity: 0.5 }}
+        animate={{
+          scale: 1.15,
+          opacity: 0.2,
+          transition: {
+            duration: 4,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut",
+          },
+        }}
+        className="absolute -bottom-64 -right-64 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"
+      ></motion.div>
+
+      {/* Grid background effect */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyODI4MjgiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnY0em0wLTZ2LTRoLTJ2NGgyek0yNCAyNGgydi0yaC0ydjJ6bTAgNHYtMmgtMnYyaDJ6bTAtNnYtMmgtMnYyaDJ6bTIwIDEwaC0ydjJoMnYtMnptMC00aC0ydjJoMnYtMnptMC0ydi0yaC0ydjJoMnptMC00aC0ydjJoMnYtMnptLTgtOHYyaDJ2LTJoLTJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30 mix-blend-luminosity pointer-events-none"></div>
+
+      <div className="container relative z-10">
         <div className="grid grid-cols-1 gap-x-[8vw] gap-y-12 pb-12 md:gap-y-16 md:pb-18 lg:grid-cols-[0.75fr_1fr] lg:gap-y-4 lg:pb-20">
-          <div className="flex flex-col">
-            <a href="#" className="mb-5 md:mb-6">
-              <img
-                src="https://d22po4pjz3o32e.cloudfront.net/logo-image.svg"
-                alt="Logo image"
-                className="inline-block"
-              />
-            </a>
-            <p className="mb-5 md:mb-6">
+          <motion.div
+            className="flex flex-col"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.7,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <motion.a
+              href="#"
+              className="mb-5 md:mb-6 font-mono text-2xl font-bold tracking-tighter"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="text-emerald-400">DESIGN</span>
+              <span className="text-white">.LAB</span>
+            </motion.a>
+            <motion.p
+              className="mb-5 md:mb-6 text-zinc-300 font-light tracking-wide leading-relaxed"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               Subscribe to our newsletter for the latest updates on features and
               releases.
-            </p>
-            <div className="w-full max-w-md">
+            </motion.p>
+            <motion.div
+              className="w-full max-w-md"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
               <form
                 className="mb-3 grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-[1fr_max-content] md:gap-y-4"
                 onSubmit={formState.handleSubmit}
@@ -55,130 +104,254 @@ export function Footer1() {
                   placeholder="Your email here"
                   value={formState.email}
                   onChange={formState.handleSetEmail}
+                  className="bg-zinc-800 border-zinc-700 text-white"
                 />
-                <Button title="Join" variant="secondary" size="sm">
+                <Button
+                  title="Join"
+                  className="rounded-none bg-emerald-500 text-zinc-900 px-6 py-2 hover:bg-emerald-400 transition-colors duration-300 font-medium uppercase tracking-wider text-sm"
+                >
                   Join
                 </Button>
               </form>
-              <p className="text-xs">
+              <p className="text-xs text-zinc-400">
                 By subscribing, you agree to our Privacy Policy and consent to
                 receive updates.
               </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 items-start gap-y-10 sm:grid-cols-3 sm:gap-x-6 md:gap-x-8 md:gap-y-4">
+            </motion.div>
+          </motion.div>
+          <motion.div
+            className="grid grid-cols-1 items-start gap-y-10 sm:grid-cols-3 sm:gap-x-6 md:gap-x-8 md:gap-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.7,
+              delay: 0.2,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
             <div className="flex flex-col items-start justify-start">
-              <h2 className="mb-3 font-semibold md:mb-4">Useful Links</h2>
+              <h2 className="mb-3 font-semibold text-emerald-400 font-mono uppercase tracking-widest text-sm md:mb-4">
+                Useful Links
+              </h2>
               <ul>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <span>About Us</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <span>Contact Us</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <span>Services</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <span>Blog Posts</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <span>FAQs</span>
-                  </a>
+                  </motion.a>
                 </li>
               </ul>
             </div>
             <div className="flex flex-col items-start justify-start">
-              <h2 className="mb-3 font-semibold md:mb-4">Connect With Us</h2>
+              <h2 className="mb-3 font-semibold text-emerald-400 font-mono uppercase tracking-widest text-sm md:mb-4">
+                Connect With Us
+              </h2>
               <ul>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <span>Support</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <span>Careers</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <span>Testimonials</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <span>Portfolio</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <span>Events</span>
-                  </a>
+                  </motion.a>
                 </li>
               </ul>
             </div>
             <div className="flex flex-col items-start justify-start">
-              <h2 className="mb-3 font-semibold md:mb-4">Follow Us</h2>
+              <h2 className="mb-3 font-semibold text-emerald-400 font-mono uppercase tracking-widest text-sm md:mb-4">
+                Follow Us
+              </h2>
               <ul className="flex flex-col items-start">
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
-                    <BiLogoFacebookCircle className="size-6" />
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <BiLogoFacebookCircle className="size-6 text-emerald-400" />
                     <span>Facebook</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
-                    <BiLogoInstagram className="size-6" />
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <BiLogoInstagram className="size-6 text-emerald-400" />
                     <span>Instagram</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
-                    <FaXTwitter className="size-6 p-0.5" />
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <FaXTwitter className="size-6 p-0.5 text-emerald-400" />
                     <span>X</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
-                    <BiLogoLinkedinSquare className="size-6" />
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <BiLogoLinkedinSquare className="size-6 text-emerald-400" />
                     <span>LinkedIn</span>
-                  </a>
+                  </motion.a>
                 </li>
                 <li className="py-2 text-sm">
-                  <a href="#" className="flex items-center gap-3">
-                    <BiLogoYoutube className="size-6" />
+                  <motion.a
+                    href="#"
+                    className="flex items-center gap-3 text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light tracking-wide"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <BiLogoYoutube className="size-6 text-emerald-400" />
                     <span>YouTube</span>
-                  </a>
+                  </motion.a>
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div className="h-px w-full bg-black" />
-        <div className="flex flex-col-reverse items-start justify-between pt-6 pb-4 text-sm md:flex-row md:items-center md:pt-8 md:pb-0">
-          <p className="mt-6 md:mt-0">© 2024 Relume. All rights reserved.</p>
+        <div className="h-px w-full bg-zinc-800" />
+        <motion.div
+          className="flex flex-col-reverse items-start justify-between pt-6 pb-4 text-sm md:flex-row md:items-center md:pt-8 md:pb-0"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <p className="mt-6 md:mt-0 text-zinc-400 font-light">
+            © 2024 DESIGN.LAB. All rights reserved.
+          </p>
           <ul className="grid grid-flow-row grid-cols-[max-content] justify-center gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0">
-            <li className="underline">
-              <a href="#">Privacy Policy</a>
+            <li>
+              <motion.a
+                href="#"
+                className="text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light"
+                whileHover={{ x: 2 }}
+                transition={{ duration: 0.2 }}
+              >
+                Privacy Policy
+              </motion.a>
             </li>
-            <li className="underline">
-              <a href="#">Terms of Service</a>
+            <li>
+              <motion.a
+                href="#"
+                className="text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light"
+                whileHover={{ x: 2 }}
+                transition={{ duration: 0.2 }}
+              >
+                Terms of Service
+              </motion.a>
             </li>
-            <li className="underline">
-              <a href="#">Cookie Settings</a>
+            <li>
+              <motion.a
+                href="#"
+                className="text-zinc-300 hover:text-emerald-400 transition-colors duration-300 font-light"
+                whileHover={{ x: 2 }}
+                transition={{ duration: 0.2 }}
+              >
+                Cookie Settings
+              </motion.a>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
