@@ -6,30 +6,30 @@ import React from "react";
 import { BiCheck } from "react-icons/bi";
 
 type ImageProps = {
-  src: string,
-  alt?: string,
+  src: string;
+  alt?: string;
 };
 
 type FeatureSection = {
-  icon: ImageProps,
-  heading: string,
-  description: string,
+  icon: ImageProps;
+  heading: string;
+  description: string;
 };
 
 type PricingPlan = {
-  planName: string,
-  description: string,
-  monthlyPrice: string,
-  features: string[],
-  button: ButtonProps,
+  planName: string;
+  description: string;
+  monthlyPrice: string;
+  features: string[];
+  button: ButtonProps;
 };
 
 type Props = {
-  tagline: string,
-  heading: string,
-  description: string,
-  featureSections: FeatureSection[],
-  pricingPlan: PricingPlan,
+  tagline: string;
+  heading: string;
+  description: string;
+  featureSections: FeatureSection[];
+  pricingPlan: PricingPlan;
 };
 
 export type Pricing5Props = React.ComponentPropsWithoutRef<"section"> &
@@ -41,73 +41,123 @@ export function Pricing5(props: Pricing5Props) {
     ...props,
   };
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container">
-        <div className="mb-8 w-full max-w-lg lg:mb-20">
-          <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-          <h2 className="rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-            {heading}
+    <section
+      id="relume"
+      className="bg-zinc-900 text-white px-[5%] py-24 md:py-32 lg:py-36 relative overflow-hidden"
+    >
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500/0 via-emerald-500 to-emerald-500/0"></div>
+      <div className="absolute -bottom-64 -right-64 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-64 -left-64 w-96 h-96 bg-zinc-800/50 rounded-full blur-3xl"></div>
+
+      <div className="container relative z-10">
+        <div className="mb-12 w-full max-w-lg md:mb-16 lg:mb-20">
+          <p className="font-mono text-emerald-400 text-sm uppercase tracking-widest mb-3">
+            {tagline}
+          </p>
+          <h2 className="mb-5 text-5xl font-bold tracking-tight md:mb-6 md:text-7xl lg:text-8xl">
+            {heading.split(" ").map((word, i) =>
+              i === 1 ? (
+                <span key={i} className="text-emerald-400">
+                  {word}{" "}
+                </span>
+              ) : (
+                <span key={i}>{word} </span>
+              )
+            )}
           </h2>
-          <p className="md:text-md">{description}</p>
+          <p className="text-zinc-300 font-light tracking-wide leading-relaxed md:text-md">
+            {description}
+          </p>
         </div>
-        <div className="grid w-full grid-cols-1 items-center gap-y-12 md:gap-x-12 md:gap-y-16 lg:grid-cols-2 lg:gap-x-20">
+
+        <div className="grid w-full grid-cols-1 items-center gap-y-12 md:gap-x-12 md:gap-y-16 lg:grid-cols-2 lg:gap-x-20 relative">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl -z-10"></div>
+
           <div className="grid grid-cols-1 gap-x-6 gap-y-8 py-2">
             {featureSections.map((featureSection, index) => (
-              <div key={index} className="flex self-start">
+              <div
+                key={index}
+                className="flex self-start group hover:translate-x-2 transition-all duration-500"
+              >
                 <div className="mr-6 flex-none self-start">
-                  <img
-                    src={featureSection.icon.src}
-                    className="size-8"
-                    alt={featureSection.icon.alt}
-                  />
+                  <div className="flex items-center justify-center size-12 bg-zinc-800/80 border border-zinc-700 group-hover:border-emerald-500 group-hover:bg-zinc-800 transition-all duration-300">
+                    <img
+                      src={featureSection.icon.src}
+                      className="size-8 group-hover:scale-110 transition-transform duration-300"
+                      alt={featureSection.icon.alt}
+                    />
+                  </div>
                 </div>
                 <div>
-                  <h3 className="mb-3 text-md font-bold leading-[1.4] md:mb-4 md:text-xl">
+                  <h3 className="mb-3 text-md font-bold leading-[1.4] md:mb-4 md:text-xl text-white group-hover:text-emerald-400 transition-colors duration-300">
                     {featureSection.heading}
                   </h3>
-                  <p>{featureSection.description}</p>
+                  <p className="text-zinc-300 font-light">
+                    {featureSection.description}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
-          <div>
-            <PricingPlan plan={pricingPlan} />
+
+          <div className="relative">
+            <div className="absolute -top-2 -left-2 w-8 h-8 border border-emerald-500"></div>
+            <div className="absolute -bottom-2 -right-2 w-12 h-12 border border-emerald-500"></div>
+            <div className="absolute -top-6 -right-6 bg-emerald-500 text-zinc-900 font-bold py-2 px-4 rotate-12 text-sm uppercase tracking-wider">
+              Limited Time!
+            </div>
+            <PricingPlanStyled plan={pricingPlan} />
           </div>
         </div>
       </div>
+
+      {/* Grid background effect */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyODI4MjgiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnY0em0wLTZ2LTRoLTJ2NGgyek0yNCAyNGgydi0yaC0ydjJ6bTAgNHYtMmgtMnYyaDJ6bTAtNnYtMmgtMnYyaDJ6bTIwIDEwaC0ydjJoMnYtMnptMC00aC0ydjJoMnYtMnptMC0ydi0yaC0ydjJoMnptMC00aC0ydjJoMnYtMnptLTgtOHYyaDJ2LTJoLTJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30 mix-blend-luminosity pointer-events-none"></div>
     </section>
   );
 }
 
-const PricingPlan = ({ plan }: { plan: PricingPlan }) => (
-  <div className="h-full border border-border-primary px-6 py-8 md:p-8">
+const PricingPlanStyled = ({ plan }: { plan: PricingPlan }) => (
+  <div className="h-full border border-zinc-800 bg-zinc-800/30 backdrop-blur-sm px-6 py-8 md:p-8 shadow-2xl relative z-10 hover:border-emerald-500/50 transition-all duration-500">
     <div className="flex items-start justify-between">
       <div>
-        <h4 className="mb-2 text-xl font-bold md:text-2xl">{plan.planName}</h4>
-        <p>{plan.description}</p>
+        <h4 className="mb-2 text-xl font-bold md:text-2xl text-white">
+          {plan.planName}
+        </h4>
+        <p className="text-zinc-300 font-light">{plan.description}</p>
       </div>
-      <h5 className="justify-self-end text-6xl font-bold md:text-9xl lg:text-10xl">
-        {plan.monthlyPrice}
-        <span className="text-2xl font-bold md:text-3xl md:leading-[1.3] lg:text-4xl">
-          /mo
-        </span>
-      </h5>
+      <div className="text-right">
+        <div className="text-zinc-400 text-lg line-through mb-1">
+          $19<span className="text-sm">/mo</span>
+        </div>
+        <h5 className="justify-self-end text-6xl font-bold md:text-8xl lg:text-9xl text-emerald-400">
+          {plan.monthlyPrice}
+        </h5>
+      </div>
     </div>
-    <div className="my-8 h-px w-full shrink-0 bg-border" />
-    <p>Includes:</p>
+    <div className="my-8 h-px w-full shrink-0 bg-zinc-700" />
+    <p className="text-white font-mono text-sm uppercase tracking-widest">
+      Includes:
+    </p>
     <div className="mb-8 mt-4 grid grid-cols-1 gap-y-4 py-2 md:grid-cols-2 md:gap-x-6">
       {plan.features.map((feature, index) => (
-        <div key={index} className="flex self-start">
+        <div key={index} className="flex self-start group">
           <div className="mr-4 flex-none self-start">
-            <BiCheck className="size-6" />
+            <BiCheck className="size-6 text-emerald-400" />
           </div>
-          <p>{feature}</p>
+          <p className="text-zinc-300 font-light group-hover:text-white transition-colors duration-300">
+            {feature}
+          </p>
         </div>
       ))}
     </div>
-    <div className="my-8 h-px w-full shrink-0 bg-border" />
+    <div className="my-8 h-px w-full shrink-0 bg-zinc-700" />
     <div>
-      <Button {...plan.button} className="w-full">
+      <Button
+        {...plan.button}
+        className="w-full rounded-none bg-emerald-500 text-zinc-900 hover:bg-emerald-400 transition-colors duration-300 font-medium uppercase tracking-wider text-sm py-3"
+      >
         {plan.button.title}
       </Button>
     </div>
@@ -115,10 +165,10 @@ const PricingPlan = ({ plan }: { plan: PricingPlan }) => (
 );
 
 export const Pricing5Defaults: Props = {
-  tagline: "Pricing",
-  heading: "Our Plans",
+  tagline: "Special Offer",
+  heading: "Free Plan",
   description:
-    "Choose the plan that fits your needs and start building your online presence today.",
+    "For a limited time, get started with our basic plan at no cost and experience the full suite of features.",
   featureSections: [
     {
       icon: {
@@ -133,8 +183,8 @@ export const Pricing5Defaults: Props = {
         src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
         alt: "Relume logo 1",
       },
-      heading: "Affordable Pricing",
-      description: "Flexible subscription options to suit your budget.",
+      heading: "Zero Cost",
+      description: "All premium features included with no hidden charges.",
     },
     {
       icon: {
@@ -147,8 +197,8 @@ export const Pricing5Defaults: Props = {
   ],
   pricingPlan: {
     planName: "Basic Plan",
-    description: "No hidden fees, cancel anytime.",
-    monthlyPrice: "$19",
+    description: "No credit card required, cancel anytime.",
+    monthlyPrice: "FREE",
     features: [
       "Custom website design",
       "24/7 customer support",
@@ -161,6 +211,6 @@ export const Pricing5Defaults: Props = {
       "Custom website design",
       "24/7 customer support",
     ],
-    button: { title: "Get started" },
+    button: { title: "Get started free" },
   },
 };
