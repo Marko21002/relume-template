@@ -6,7 +6,6 @@ import { Pricing5 } from "@/components/Pricing5";
 import { Layout1 } from "@/components/Layout1";
 import { Contact15 } from "@/components/Contact15";
 import { Footer1 } from "@/components/Footer1";
-import Image from "next/image";
 
 export default function Home() {
   return (
