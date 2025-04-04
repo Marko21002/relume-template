@@ -20,24 +20,6 @@ export function Header1() {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          {/* Decorative elements */}
-          <div className="absolute -top-20 -left-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute top-40 left-1/2 w-64 h-64 bg-zinc-700/30 rounded-full blur-3xl"></div>
-
-          <motion.div
-            className="absolute -top-2 -left-2 w-16 h-16 border border-emerald-500/50 z-0"
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          ></motion.div>
-          <motion.div
-            className="absolute -bottom-2 -right-2 w-24 h-24 border border-emerald-500/30 z-0"
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          ></motion.div>
-
           {/* Content */}
           <motion.p
             className="font-mono text-emerald-400 text-sm uppercase tracking-widest mb-5"
@@ -98,7 +80,7 @@ export function Header1() {
               <Button
                 title="learn more"
                 variant="secondary"
-                className="rounded-none bg-transparent border border-zinc-700 text-white hover:bg-zinc-800 hover:border-zinc-600 transition-colors duration-300 px-10 py-4 text-lg font-bold tracking-tighter normal-case"
+                className="rounded-none z-100 bg-zinc-900 border border-zinc-700 text-white hover:bg-zinc-800 hover:border-zinc-600 transition-colors duration-300 px-10 py-4 text-lg font-bold tracking-tighter normal-case"
               >
                 Learn more
               </Button>
