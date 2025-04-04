@@ -98,7 +98,7 @@ export function Header1() {
               <Button
                 title="learn more"
                 variant="secondary"
-                className="rounded-none bg-transparent border border-zinc-700 text-white hover:bg-zinc-800 hover:border-zinc-600 transition-colors duration-300 px-10 py-4 font-medium tracking-wider text-sm normal-case"
+                className="rounded-none bg-transparent border border-zinc-700 text-white hover:bg-zinc-800 hover:border-zinc-600 transition-colors duration-300 px-10 py-4 text-lg font-bold tracking-tighter normal-case"
               >
                 Learn more
               </Button>

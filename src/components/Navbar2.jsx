@@ -54,13 +54,18 @@ export function Navbar2() {
           </a>
           <div className="flex items-center gap-4 lg:hidden">
             <div>
-              <Button
-                className="w-full rounded-none px-4 py-1 bg-emerald-500 text-zinc-900 hover:bg-emerald-400 transition-colors duration-300"
-                title="Get Started"
-                size="sm"
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Get Started
-              </Button>
+                <Button
+                  className="w-full rounded-none px-4 py-2 bg-emerald-500 text-zinc-900 hover:bg-emerald-400 transition-colors duration-300 text-lg font-bold tracking-tighter normal-case"
+                  title="get started"
+                  size="sm"
+                >
+                  Get started
+                </Button>
+              </motion.div>
             </div>
             <button
               className="-mr-2 flex size-12 flex-col items-center justify-center lg:hidden"
@@ -198,13 +203,15 @@ export function Navbar2() {
           </div>
         </motion.div>
         <div className="hidden justify-self-end lg:block">
-          <Button
-            className="px-6 py-2 rounded-none bg-emerald-500 text-zinc-900 hover:bg-emerald-400 transition-colors duration-300 font-medium uppercase tracking-wider text-sm"
-            title="Get Started"
-            size="sm"
-          >
-            Get Started
-          </Button>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+            <Button
+              className="px-8 py-3 rounded-none bg-emerald-500 text-zinc-900 hover:bg-emerald-400 transition-colors duration-300 text-lg font-bold tracking-tighter normal-case"
+              title="get started"
+              size="sm"
+            >
+              Get started
+            </Button>
+          </motion.div>
         </div>
       </div>
     </section>
