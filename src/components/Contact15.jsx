@@ -54,7 +54,7 @@ export function Contact15() {
         className="absolute top-64 -left-64 w-96 h-96 bg-zinc-800/50 rounded-full blur-3xl"
       ></motion.div>
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 mx-auto">
         <div>
           <div className="mb-12 grid auto-cols-fr grid-cols-1 gap-x-12 gap-y-12 md:mb-20 md:grid-cols-[1fr_.75fr] md:gap-x-20 md:gap-y-16">
             <motion.div

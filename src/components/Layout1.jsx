@@ -42,7 +42,7 @@ export function Layout1() {
         className="absolute top-64 -left-64 w-96 h-96 bg-zinc-200 rounded-full blur-3xl"
       ></motion.div>
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 mx-auto">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <motion.div
             initial={{ opacity: 0, y: 40 }}

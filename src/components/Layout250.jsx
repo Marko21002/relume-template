@@ -16,7 +16,7 @@ export function Layout250() {
       <div className="absolute -bottom-48 -right-48 w-96 h-96 bg-emerald-100 rounded-full opacity-50 blur-3xl"></div>
       <div className="absolute -top-24 -left-24 w-64 h-64 bg-zinc-200 rounded-full blur-3xl"></div>
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 mx-auto">
         <motion.div
           className="mb-16 md:mb-24 lg:mb-28"
           initial={{ opacity: 0, y: 20 }}

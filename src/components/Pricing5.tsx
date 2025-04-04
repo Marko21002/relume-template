@@ -107,7 +107,7 @@ export function Pricing5(props: Pricing5Props) {
         className="absolute top-64 -left-64 w-96 h-96 bg-zinc-800/50 rounded-full blur-3xl"
       ></motion.div>
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 mx-auto">
         <motion.div
           className="mb-12 w-full max-w-lg md:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 40 }}
