@@ -20,7 +20,6 @@ type Props = {
   description: string;
   footerHeading: string;
   footerDescription: string;
-  button: ButtonProps;
   questions: QuestionsProps[];
   phoneNumber: string;
 };
@@ -36,7 +35,6 @@ export const Faq1 = (props: Faq1Props) => {
     questions,
     footerHeading,
     footerDescription,
-    button,
     phoneNumber,
   } = {
     ...Faq1Defaults,
@@ -182,9 +180,5 @@ export const Faq1Defaults: Props = {
   footerHeading: "Still have questions?",
   footerDescription:
     "Contact our team for a free consultation. We're here to answer any questions about your web design project and how we can help bring your vision to life.",
-  button: {
-    title: "Contact Us",
-    variant: "primary",
-  },
   phoneNumber: "+1234567890",
 };

@@ -7,7 +7,6 @@ type Props = {
   tagline: string;
   heading: string;
   description: string;
-  buttons: ButtonProps[];
   phoneNumber: string;
 };
 
@@ -15,7 +14,7 @@ export type Cta25Props = React.ComponentPropsWithoutRef<"section"> &
   Partial<Props>;
 
 export const Cta25 = (props: Cta25Props) => {
-  const { tagline, heading, description, buttons, phoneNumber } = {
+  const { tagline, heading, description, phoneNumber } = {
     ...Cta25Defaults,
     ...props,
   };
@@ -91,6 +90,5 @@ export const Cta25Defaults: Props = {
   heading: "Let's Create Your Dream Website",
   description:
     "Transform your online presence with a custom website that perfectly captures your brand's unique identity. Our experienced team is ready to bring your vision to life.",
-  buttons: [],
   phoneNumber: "+1234567890",
 };
