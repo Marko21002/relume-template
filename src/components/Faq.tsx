@@ -7,7 +7,6 @@ import {
   AccordionTrigger,
 } from "@relume_io/relume-ui";
 import { motion } from "framer-motion";
-import type { ButtonProps } from "@relume_io/relume-ui";
 
 type QuestionsProps = {
   title: string;

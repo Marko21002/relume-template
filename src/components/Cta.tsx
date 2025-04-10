@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, ButtonProps } from "@relume_io/relume-ui";
+import { Button } from "@relume_io/relume-ui";
 import { motion } from "framer-motion";
 
 type Props = {
