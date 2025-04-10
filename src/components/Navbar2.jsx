@@ -59,11 +59,11 @@ export function Navbar2() {
                 whileTap={{ scale: 0.98 }}
               >
                 <Button
-                  className="w-full rounded-none px-4 py-2 bg-emerald-500 text-zinc-900 hover:bg-emerald-400 transition-colors duration-300 text-lg font-bold tracking-tighter normal-case"
+                  className="px-8 py-3 cursor-pointer bg-emerald-500 text-zinc-900 rounded-full hover:bg-emerald-400 transition-colors duration-300 text-md font-bold tracking-tighter normal-case"
                   title="get started"
                   size="sm"
                 >
-                  Get started
+                  Book a Call
                 </Button>
               </motion.div>
             </div>

@@ -236,9 +236,9 @@ export function Contact15() {
             }}
           >
             <img
-              src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg"
-              className="w-full object-cover border border-zinc-800 shadow-2xl"
-              alt="Relume placeholder image"
+              src="/call.jpg"
+              className="w-full object-cover border border-zinc-800 shadow-2xl rounded-lg md:max-h-[400px]"
+              alt="Person on a phone call"
             />
           </motion.div>
         </motion.div>
