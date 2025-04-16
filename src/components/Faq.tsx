@@ -103,7 +103,7 @@ export const Faq1 = (props: Faq1Props) => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <Button
                 onClick={() => window.open(`tel:${phoneNumber}`, "_self")}
-                className="rounded-full bg-emerald-500 text-zinc-900 hover:bg-emerald-400 transition-colors duration-300 px-8 py-4 text-lg font-bold tracking-tighter normal-case cursor-pointer flex items-center gap-2"
+                className="rounded-full bg-emerald-500 text-zinc-900 hover:bg-emerald-400 transition-colors duration-300 px-8 py-4 text-lg font-bold tracking-tighter normal-case cursor-pointer flex items-center gap-2 border-0"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
