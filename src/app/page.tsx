@@ -7,6 +7,8 @@ import { Footer1 } from "@/components/Footer1";
 import { Testimonial17 } from "@/components/Testimonial";
 import { Cta25 } from "@/components/Cta";
 import { Faq1 } from "@/components/Faq";
+import { CookieConsent } from "@/components/CookieConsent";
+
 export default function Home() {
   return (
     <div>
@@ -31,6 +33,7 @@ export default function Home() {
         <Contact15 />
       </section>
       <Footer1 />
+      <CookieConsent />
     </div>
   );
 }

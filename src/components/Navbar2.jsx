@@ -129,78 +129,29 @@ export function Navbar2() {
             Home
           </a>
           <a
-            href="#about"
-            className="block py-3 text-md first:pt-7 text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2"
-          >
-            About
-          </a>
-          <a
             href="#testimonials"
             className="block py-3 text-md first:pt-7 text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2"
           >
             Testimonials
           </a>
-          <div
-            onMouseEnter={useActive.openOnDesktopDropdownMenu}
-            onMouseLeave={useActive.closeOnDesktopDropdownMenu}
+          <a
+            href="#pricing"
+            className="block py-3 text-md first:pt-7 text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2"
           >
-            <button
-              className="flex w-full items-center justify-center gap-4 py-3 text-center text-md text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:w-auto lg:flex-none lg:justify-start lg:gap-2 lg:px-4 lg:py-2 lg:text-base"
-              onClick={useActive.openOnMobileDropdownMenu}
-            >
-              <span>More Info</span>
-              <motion.span
-                variants={{ rotated: { rotate: 180 }, initial: { rotate: 0 } }}
-                animate={useActive.animateDropdownMenuIcon}
-                transition={{ duration: 0.3 }}
-                className="text-emerald-400"
-              >
-                <RxChevronDown />
-              </motion.span>
-            </button>
-            <AnimatePresence>
-              <motion.nav
-                variants={{
-                  open: {
-                    visibility: "visible",
-                    opacity: "var(--opacity-open, 100%)",
-                    display: "block",
-                    y: 0,
-                  },
-                  close: {
-                    visibility: "hidden",
-                    opacity: "var(--opacity-close, 0)",
-                    display: "none",
-                    y: "var(--y-close, 0%)",
-                  },
-                }}
-                animate={useActive.animateDropdownMenu}
-                initial="close"
-                exit="close"
-                transition={{ duration: 0.2 }}
-                className="bg-zinc-900 lg:absolute lg:z-50 lg:border lg:border-zinc-800 lg:p-2 lg:[--y-close:25%]"
-              >
-                <a
-                  href="#pricing"
-                  className="block py-3 text-center text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-left"
-                >
-                  Pricing
-                </a>
-                <a
-                  href="#faq"
-                  className="block py-3 text-center text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-left"
-                >
-                  FAQ
-                </a>
-                <a
-                  href="#contact"
-                  className="block py-3 text-center text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-left"
-                >
-                  Contact
-                </a>
-              </motion.nav>
-            </AnimatePresence>
-          </div>
+            Pricing
+          </a>
+          <a
+            href="#faq"
+            className="block py-3 text-md first:pt-7 text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2"
+          >
+            FAQ
+          </a>
+          <a
+            href="#contact"
+            className="block py-3 text-md first:pt-7 text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2"
+          >
+            Contact
+          </a>
         </motion.div>
         <div className="hidden justify-self-end lg:block">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
