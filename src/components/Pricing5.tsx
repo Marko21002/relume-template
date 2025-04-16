@@ -10,7 +10,6 @@ type PricingPlan = {
   planName: string;
   price: string;
   features: string[];
-  button: ButtonProps;
 };
 
 type Props = {
@@ -31,13 +30,13 @@ export const Pricing18 = (props: Pricing18Props) => {
   return (
     <section
       id="relume"
-      className="bg-zinc-900 text-white px-[5%] py-24 md:py-28 lg:py-32 relative overflow-hidden border-t border-zinc-800 backdrop-blur-md bg-opacity-90"
+      className="bg-zinc-900 text-white px-[5%] py-16 md:py-20 lg:py-24 relative overflow-hidden border-t border-zinc-800 backdrop-blur-md bg-opacity-90"
     >
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyODI4MjgiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnY0em0wLTZ2LTRoLTJ2NGgyek0yNCAyNGgydi0yaC0ydjJ6bTAgNHYtMmgtMnYyaDJ6bTAtNnYtMmgtMnYyaDJ6bTIwIDEwaC0ydjJoMnYtMnptMC00aC0ydjJoMnYtMnptMC0ydi0yaC0ydjJoMnptMC00aC0ydjJoMnYtMnptLTgtOHYyaDJ2LTJoLTJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30 mix-blend-luminosity pointer-events-none"></div>
 
       <div className="container relative z-10 mx-auto">
         <motion.div
-          className="mx-auto mb-16 max-w-2xl text-center"
+          className="mx-auto mb-12 max-w-2xl text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -84,21 +83,6 @@ export const Pricing18 = (props: Pricing18Props) => {
                   ))}
                 </div>
               </div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button
-                  {...plan.button}
-                  className={`w-full rounded-full ${
-                    index === 1
-                      ? "bg-emerald-500 text-zinc-900 hover:bg-emerald-400"
-                      : "bg-zinc-900 border border-zinc-700 text-white hover:bg-zinc-800 hover:border-zinc-600"
-                  } transition-colors duration-300 text-lg font-bold tracking-tighter normal-case py-3 cursor-pointer`}
-                >
-                  {plan.button.title}
-                </Button>
-              </motion.div>
             </motion.div>
           ))}
         </div>
@@ -123,7 +107,6 @@ export const Pricing18Defaults: Props = {
         "Contact form integration",
         "1 round of revisions",
       ],
-      button: { title: "Get Started" },
     },
     {
       planName: "Business Website",
@@ -137,7 +120,6 @@ export const Pricing18Defaults: Props = {
         "Social media integration",
         "3 rounds of revisions",
       ],
-      button: { title: "Most Popular" },
     },
     {
       planName: "Premium Website",
@@ -152,7 +134,6 @@ export const Pricing18Defaults: Props = {
         "Payment gateway setup",
         "Unlimited revisions",
       ],
-      button: { title: "Contact Us" },
     },
   ],
 };
