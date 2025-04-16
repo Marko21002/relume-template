@@ -179,5 +179,5 @@ export const Faq1Defaults: Props = {
   footerHeading: "Still have questions?",
   footerDescription:
     "Contact our team for a free consultation. We're here to answer any questions about your web design project and how we can help bring your vision to life.",
-  phoneNumber: "+1234567890",
+  phoneNumber: "+43 677 61197581",
 };

@@ -47,7 +47,7 @@ export function Navbar2() {
       <div className="mx-auto size-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center lg:justify-between lg:gap-4">
         <div className="flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0">
           <a
-            href="#"
+            href="#home"
             className="font-mono text-2xl font-bold tracking-tighter text-emerald-400"
           >
             DESIGN<span className="text-white">.LAB</span>
@@ -58,13 +58,13 @@ export function Navbar2() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Button
-                  className="px-8 py-3 cursor-pointer bg-emerald-500 text-zinc-900 rounded-full hover:bg-emerald-400 transition-colors duration-300 text-md font-bold tracking-tighter normal-case"
-                  title="get started"
-                  size="sm"
+                <a
+                  href="tel:+43 677 61197581"
+                  className="px-8 py-3 cursor-pointer bg-emerald-500 text-zinc-900 rounded-full hover:bg-emerald-400 transition-colors duration-300 text-md font-bold tracking-tighter normal-case inline-block"
+                  title="call us"
                 >
-                  Book a Call
-                </Button>
+                  Call us
+                </a>
               </motion.div>
             </div>
             <button
@@ -123,22 +123,22 @@ export function Navbar2() {
           className="overflow-hidden px-[5%] text-center bg-zinc-900 lg:bg-transparent lg:flex lg:items-center lg:justify-center lg:px-0 lg:[--height-closed:auto] lg:[--height-open:auto]"
         >
           <a
-            href="#"
+            href="#home"
             className="block py-3 text-md first:pt-7 text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2"
           >
             Home
           </a>
           <a
-            href="#"
+            href="#about"
             className="block py-3 text-md first:pt-7 text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2"
           >
-            Services
+            About
           </a>
           <a
-            href="#"
+            href="#testimonials"
             className="block py-3 text-md first:pt-7 text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-base first:lg:pt-2"
           >
-            Portfolio
+            Testimonials
           </a>
           <div
             onMouseEnter={useActive.openOnDesktopDropdownMenu}
@@ -181,22 +181,22 @@ export function Navbar2() {
                 className="bg-zinc-900 lg:absolute lg:z-50 lg:border lg:border-zinc-800 lg:p-2 lg:[--y-close:25%]"
               >
                 <a
-                  href="#"
-                  className="block py-3 text-center text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-left"
-                >
-                  Testimonials
-                </a>
-                <a
-                  href="#"
+                  href="#pricing"
                   className="block py-3 text-center text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-left"
                 >
                   Pricing
                 </a>
                 <a
-                  href="#"
+                  href="#faq"
                   className="block py-3 text-center text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-left"
                 >
-                  Contact Us
+                  FAQ
+                </a>
+                <a
+                  href="#contact"
+                  className="block py-3 text-center text-zinc-300 hover:text-emerald-400 font-light tracking-wide transition-colors duration-300 lg:px-4 lg:py-2 lg:text-left"
+                >
+                  Contact
                 </a>
               </motion.nav>
             </AnimatePresence>
@@ -204,13 +204,13 @@ export function Navbar2() {
         </motion.div>
         <div className="hidden justify-self-end lg:block">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-            <Button
-              className="px-8 py-3 cursor-pointer bg-emerald-500 text-zinc-900 rounded-full hover:bg-emerald-400 transition-colors duration-300 text-md font-bold tracking-tighter normal-case"
-              title="get started"
-              size="sm"
+            <a
+              href="tel:+43 677 61197581"
+              className="px-8 py-3 cursor-pointer bg-emerald-500 text-zinc-900 rounded-full hover:bg-emerald-400 transition-colors duration-300 text-md font-bold tracking-tighter normal-case inline-block"
+              title="call us"
             >
-              Book a Call
-            </Button>
+              Call us
+            </a>
           </motion.div>
         </div>
       </div>

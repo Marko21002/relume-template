@@ -90,5 +90,5 @@ export const Cta25Defaults: Props = {
   heading: "Let's Create Your Dream Website",
   description:
     "Transform your online presence with a custom website that perfectly captures your brand's unique identity. Our experienced team is ready to bring your vision to life.",
-  phoneNumber: "+1234567890",
+  phoneNumber: "+43 677 61197581",
 };

@@ -5,12 +5,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export function Header1() {
-  const phoneNumber = "+1234567890"; // Add your phone number here
+  const phoneNumber = "+43 677 61197581"; // Updated phone number
 
   return (
     <section
       id="relume"
-      className="bg-zinc-900 text-white px-[5%] py-36 md:py-40 lg:py-44 mt-16 relative overflow-hidden border-b border-zinc-800 backdrop-blur-md bg-opacity-90"
+      className="bg-zinc-900 text-white px-[5%] py-36 md:py-40 lg:py-44 mt-8 relative overflow-hidden border-b border-zinc-800 backdrop-blur-md bg-opacity-90"
     >
       <div className="container relative z-10 mx-auto">
         <motion.div

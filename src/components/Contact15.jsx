@@ -138,9 +138,9 @@ export function Contact15() {
                     </h3>
                     <a
                       className="text-zinc-300 hover:text-emerald-400 transition-colors duration-300"
-                      href="#"
+                      href="mailto:designerlabagency@gmail.com"
                     >
-                      hello@relume.io
+                      designerlabagency@gmail.com
                     </a>
                   </div>
                 </motion.div>
@@ -167,36 +167,10 @@ export function Contact15() {
                     </h3>
                     <a
                       className="text-zinc-300 hover:text-emerald-400 transition-colors duration-300"
-                      href="#"
+                      href="tel:+4367761197581"
                     >
-                      +1 (555) 000-0000
+                      +43 677 61197581
                     </a>
-                  </div>
-                </motion.div>
-                <motion.div
-                  className="flex flex-row group hover:translate-x-2 transition-all duration-500"
-                  custom={2}
-                  variants={contactItemVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  whileHover={{ x: 10, transition: { duration: 0.3 } }}
-                >
-                  <div className="mr-4 md:mb-4">
-                    <motion.div
-                      className="flex items-center justify-center size-12 bg-zinc-800/80 border border-zinc-700 group-hover:border-emerald-500 group-hover:bg-zinc-800 transition-all duration-300"
-                      whileHover={{ borderColor: "#10b981", scale: 1.05 }}
-                    >
-                      <BiMap className="size-6 text-emerald-400 group-hover:scale-110 transition-transform duration-300" />
-                    </motion.div>
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-md leading-[1.4] font-bold md:text-xl text-white group-hover:text-emerald-400 transition-colors duration-300">
-                      Office
-                    </h3>
-                    <p className="text-zinc-300">
-                      123 Sample St, Sydney NSW 2000 AU
-                    </p>
                   </div>
                 </motion.div>
               </div>

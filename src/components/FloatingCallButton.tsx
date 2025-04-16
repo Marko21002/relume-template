@@ -9,18 +9,18 @@ interface FloatingCallButtonProps {
 }
 
 export const FloatingCallButton = ({
-  phoneNumber = "+1234567890",
+  phoneNumber = "+43 677 61197581",
   backgroundColor = "bg-emerald-500",
 }: FloatingCallButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCallClick = () => {
-    window.open(`tel:${phoneNumber}`, "_blank");
+    window.open(`tel:+43 677 61197581`, "_blank");
     setIsOpen(false);
   };
 
   const handleWhatsAppClick = () => {
-    window.open(`https://wa.me/${phoneNumber.replace(/\+/g, "")}`, "_blank");
+    window.open(`https://wa.me/4367761197581`, "_blank");
     setIsOpen(false);
   };
 
