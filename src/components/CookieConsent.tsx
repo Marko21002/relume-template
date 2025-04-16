@@ -40,7 +40,7 @@ export function CookieConsent() {
             <div className="text-zinc-300 text-sm md:text-base">
               <p>
                 We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
-                By clicking "Accept", you consent to our use of cookies.
+                By clicking &quot;Accept&quot;, you consent to our use of cookies.
               </p>
             </div>
             <div className="flex gap-3">

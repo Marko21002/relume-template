@@ -15,12 +15,12 @@ export const FloatingCallButton = ({
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCallClick = () => {
-    window.open(`tel:+43 677 61197581`, "_blank");
+    window.open(`tel:${phoneNumber}`, "_blank");
     setIsOpen(false);
   };
 
   const handleWhatsAppClick = () => {
-    window.open(`https://wa.me/4367761197581`, "_blank");
+    window.open(`https://wa.me/${phoneNumber.replace(/\D/g, "")}`, "_blank");
     setIsOpen(false);
   };
 
