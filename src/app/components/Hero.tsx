@@ -7,7 +7,7 @@ export const Hero = () => {
     <div className="px-[2%] py-12 max-w-[1200px] mx-auto md:py-24 lg:py-28 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12">
       <div className="flex flex-col items-center lg:items-start justify-center gap-4 lg:w-1/2">
         <h1 className="text-sm ">OVERDELIVER</h1>
-        <div className="text-4xl text-center lg:text-left">
+        <div className="text-4xl text-center lg:text-left md:text-6xl">
           <span className="font-playfair-display italic">
             Web design agency
           </span>

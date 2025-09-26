@@ -2,9 +2,10 @@ export default function Services() {
   const services = [
     {
       step: 1,
-      image: "/Image1.avif",
-      title: "Choose a plan",
-      description: "Choose one of our website packs - Starter or Pro.",
+      image: "/discovery.png",
+      title: "Discovery call",
+      description:
+        "We start with a discovery call to understand your business, goals, and target audience.",
     },
     {
       step: 2,
