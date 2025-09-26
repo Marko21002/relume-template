@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Promo from "../../../public/Promo.avif";
 import Background from "../../../public/download.png";
+import Computer from "../../../public/Computer.svg";
 
 export const Hero = () => {
   return (
@@ -32,12 +33,7 @@ export const Hero = () => {
       </div>
       <div className="relative mt-16 w-full max-w-5xl flex items-center justify-center">
         <Image
-          src={Background}
-          alt="Background pattern"
-          className="absolute z-0 w-full h-full object-cover rounded-xl"
-        />
-        <Image
-          src={Promo}
+          src={Computer}
           alt="Promo video"
           className="w-full rounded-xl z-10"
         />
