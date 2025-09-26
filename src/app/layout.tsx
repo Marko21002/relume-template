@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Sofia_Sans,
+  Sofia_Sans_Condensed,
+  Playfair_Display,
+  Raleway,
+} from "next/font/google";
 import "./globals.css";
-import FloatingCallButton from "@/components/FloatingCallButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +16,26 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+});
+
+const sofiaSansCondensed = Sofia_Sans_Condensed({
+  variable: "--font-sofia-sans-condensed",
+  subsets: ["latin"],
+});
+
+const sofiaSans = Sofia_Sans({
+  variable: "--font-sofia-sans",
+  subsets: ["latin"],
+});
+
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
 });
 
@@ -26,10 +52,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${sofiaSansCondensed.variable} ${sofiaSans.variable} ${playfairDisplay.variable} ${sofiaSans.variable} ${raleway.variable} antialiased`}
       >
         {children}
-        <FloatingCallButton phoneNumber="+1234567890" />
       </body>
     </html>
   );
