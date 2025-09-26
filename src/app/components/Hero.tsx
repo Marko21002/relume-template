@@ -4,9 +4,9 @@ import Background from "../../../public/download.png";
 
 export const Hero = () => {
   return (
-    <div className="px-[2%] py-16 max-w-[1200px] mx-auto md:py-24 lg:py-28 flex flex-col items-center justify-center">
+    <div className="px-[2%] py-12 max-w-[1200px] mx-auto md:py-24 lg:py-28 flex flex-col items-center justify-center">
       <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="text-sm ">DESIGNLAB</h1>
+        <h1 className="text-sm ">OVERDELIVER</h1>
         <div className="text-4xl text-center">
           <span className="font-playfair-display italic">
             Web design agency
