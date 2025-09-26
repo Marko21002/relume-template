@@ -36,7 +36,7 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.step}
-              className="relative w-full h-[300px] border border-neutral-400 rounded-lg px-6 pt-12 pb-6 flex flex-col items-center justify-center gap-4 text-center"
+              className="relative w-full h-fit border border-neutral-400 rounded-lg px-6 pt-12 pb-6 flex flex-col items-center justify-center gap-4 text-center"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-neutral-400 bg-white px-4 py-2">
                 <span className="text-sm font-semibold tracking-widest">
