@@ -30,12 +30,8 @@ export const Hero = () => {
           </button>
         </div>
       </div>
-      <div className="relative mt-16 lg:mt-0 w-full lg:w-1/2 max-w-5xl flex items-center justify-center">
-        <Image
-          src={Computer}
-          alt="Promo video"
-          className="w-full rounded-xl z-10"
-        />
+      <div className="relative mt-4 lg:mt-0 w-full lg:w-1/2 max-w-5xl flex items-center justify-center">
+        <Image src={Computer} alt="Promo video" className="w-full rounded-xl" />
       </div>
     </div>
   );
