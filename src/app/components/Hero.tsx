@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Promo from "../../../public/Promo.avif";
-import Background from "../../../public/download.png";
+
 import Computer from "../../../public/Computer.svg";
 
 export const Hero = () => {
