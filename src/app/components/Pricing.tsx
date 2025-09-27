@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 export default function Pricing() {
   const [isYearly, setIsYearly] = useState(false);
@@ -74,26 +73,6 @@ export default function Pricing() {
     setOpenAddon(openAddon === index ? null : index);
   };
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <div className="px-[5%] max-w-[1400px] mx-auto py-16 md:py-24 lg:py-28 flex flex-col items-center justify-center">
       <div className="text-center flex flex-col items-center justify-center gap-4">
@@ -120,22 +99,15 @@ export default function Pricing() {
         </label>
         <span>Yearly</span>
       </div>
-      <motion.div
-        className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12 lg:pt-16"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12 lg:pt-16">
         {plans.map((plan, index) => (
-          <motion.div
+          <div
             key={plan.name}
             className={`relative w-full bg-white rounded-2xl p-8 flex flex-col shadow-lg transition-all hover:shadow-2xl ${
               plan.isPrimary
                 ? "ring-2 ring-neutral-400"
                 : "ring-1 ring-neutral-200"
             }`}
-            variants={cardVariants}
           >
             <div className="flex justify-between items-start">
               <h3 className="text-xl font-raleway font-semibold">
@@ -224,9 +196,9 @@ export default function Pricing() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
