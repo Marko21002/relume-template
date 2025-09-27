@@ -5,7 +5,7 @@ export default function Services() {
       image: "/discovery.png",
       title: "Discovery call",
       description:
-        "We start with a discovery call to understand your business, goals, and target audience.",
+        "We start with a discovery call to understand your business and goals.",
     },
     {
       step: 2,
@@ -17,7 +17,7 @@ export default function Services() {
     {
       step: 3,
       image: "/development.png",
-      title: "Receive website",
+      title: "Development",
       description:
         "After your approval, we build your website and deliver it to you.",
     },
@@ -53,7 +53,9 @@ export default function Services() {
                 <h3 className=" font-raleway font-semibold text-xl">
                   {service.title}
                 </h3>
-                <p className="text-sm">{service.description}</p>
+                <p className="text-md text-neutral-600 ">
+                  {service.description}
+                </p>
               </div>
             </div>
           ))}

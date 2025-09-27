@@ -22,10 +22,10 @@ export const Hero = () => {
           find out more, watch the video below and book a call.
         </div>
         <div className="flex w-full flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-          <button className="px-4 py-3 w-full sm:w-auto bg-white text-black ring ring-neutral-400 rounded-lg text-md font-semibold">
+          <button className="px-4 cursor-pointer py-3 w-full sm:w-auto bg-white text-black ring ring-neutral-400 rounded-lg text-md font-semibold transition-colors hover:bg-neutral-100">
             Book a call
           </button>
-          <button className="px-4 py-3 w-full sm:w-auto bg-black text-white rounded-lg text-md font-semibold">
+          <button className="px-4 cursor-pointer py-3 w-full sm:w-auto bg-black text-white rounded-lg text-md font-semibold transition-colors hover:bg-neutral-800">
             Get a free re-design
           </button>
         </div>
