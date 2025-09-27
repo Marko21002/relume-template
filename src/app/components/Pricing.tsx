@@ -104,7 +104,9 @@ export default function Pricing() {
           <div
             key={plan.name}
             className={`relative w-full bg-white rounded-2xl p-8 flex flex-col shadow-lg transition-all hover:shadow-2xl ${
-              plan.isPrimary ? "ring-2 ring-black" : "ring-1 ring-neutral-200"
+              plan.isPrimary
+                ? "ring-2 ring-neutral-400"
+                : "ring-1 ring-neutral-200"
             }`}
           >
             <div className="flex justify-between items-start">
