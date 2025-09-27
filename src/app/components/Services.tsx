@@ -9,14 +9,14 @@ export default function Services() {
     },
     {
       step: 2,
-      image: "/style.avif",
-      title: "Pick a style",
+      image: "/design.png",
+      title: "Design",
       description:
-        "After getting started, we propose different styles to choose from..",
+        "After getting started, we propose different designs to choose from..",
     },
     {
       step: 3,
-      image: "/Website.avif",
+      image: "/development.png",
       title: "Receive website",
       description:
         "After your approval, we build your website and deliver it to you.",
@@ -33,11 +33,11 @@ export default function Services() {
             in two weeks
           </span>
         </p>
-        <div className="flex w-full flex-col lg:flex-row items-center justify-center gap-8 pt-12 lg:pt-16">
+        <div className="flex w-full flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 pt-12 lg:pt-16">
           {services.map((service) => (
             <div
               key={service.step}
-              className="relative w-full h-fit border border-neutral-400 rounded-lg px-6 pt-12 pb-6 flex flex-col items-center justify-center gap-4 text-center"
+              className="relative w-full border border-neutral-400 rounded-lg px-6 pt-12 pb-6 flex flex-col items-center justify-between gap-4 text-center"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-neutral-400 bg-white px-4 py-2">
                 <span className="text-sm font-semibold tracking-widest">
@@ -45,7 +45,7 @@ export default function Services() {
                 </span>
               </div>
               <img
-                className=" w-[90%] rounded-md object-cover"
+                className="w-full rounded-md object-cover lg:h-64"
                 src={service.image}
                 alt={service.title}
               />
