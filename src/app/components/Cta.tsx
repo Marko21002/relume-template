@@ -13,8 +13,8 @@ export default function Cta() {
             </span>
           </h2>
           <p className="mt-4 text-md text-neutral-600">
-            Let's build a stunning website that converts visitors into customers
-            and takes your business to the next level.
+            Let&apos;s build a stunning website that converts visitors into
+            customers and takes your business to the next level.
           </p>
           <div className="mt-8 flex w-full flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             <button className="px-4 py-3 w-full sm:w-auto bg-white text-black ring ring-neutral-400 rounded-lg text-md font-semibold transition-colors hover:bg-neutral-200">
