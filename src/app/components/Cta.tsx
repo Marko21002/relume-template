@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CtaImage from "../../../public/Cta.png";
+import CtaImage from "../../../public/cta.png";
 
 export default function Cta() {
   return (
