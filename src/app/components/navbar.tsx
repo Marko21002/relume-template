@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,26 +10,67 @@ export default function Navbar() {
     { name: "Services", href: "#" },
     { name: "Pricing", href: "#" },
     { name: "FAQ", href: "#" },
+    { name: "Portfolio", href: "#" },
   ];
+
+  const linkVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { x: 20, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
 
   return (
     <>
       <div className="px-[5%] max-w-[1400px] mx-auto py-4 flex items-center justify-between">
         <a href="#">
-          <img src="/overdeliver.png" alt="overdeliver" className="w-40 " />
+          <motion.img
+            src="/overdeliver.png"
+            alt="overdeliver"
+            className="w-40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          />
         </a>
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
+          {navLinks.map((link, index) => (
+            <motion.a
               key={link.name}
               href={link.href}
               className="font-semibold text-neutral-600 hover:text-black transition-colors"
+              variants={linkVariants}
+              initial="hidden"
+              animate="visible"
+              custom={index}
+              transition={{ delay: 0.2 * index }}
             >
               {link.name}
-            </a>
+            </motion.a>
           ))}
         </div>
-        <div className="hidden md:block ">
+        <motion.div
+          className="hidden md:block"
+          variants={buttonVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.8 }}
+        >
           <div className="flex gap-4">
             <button className="px-4 cursor-pointer py-3 w-full sm:w-auto bg-white text-black ring ring-neutral-400 rounded-lg text-md font-semibold transition-colors hover:bg-neutral-100">
               Book a call
@@ -37,7 +79,7 @@ export default function Navbar() {
               Get a free re-design
             </button>
           </div>
-        </div>
+        </motion.div>
         <button
           onClick={() => setIsMenuOpen(true)}
           className="px-2 py-2 rounded-full border border-black cursor-pointer md:hidden"

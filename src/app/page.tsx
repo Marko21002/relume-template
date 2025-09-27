@@ -6,12 +6,14 @@ import Pricing from "./components/Pricing";
 import Faq from "./components/Faq";
 import Cta from "./components/Cta";
 import Footer from "./components/Footer";
+import Portfolio from "./components/portfolio";
 export default function Home() {
   return (
     <div>
       <Navbar />
       <Hero />
       <Services />
+      <Portfolio />
       <Pricing />
       <Faq />
       <Cta />

@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function Footer() {
   const navLinks = [
     { name: "Home", href: "#" },
@@ -45,10 +48,25 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="px-[5%] bg-white">
-      <div className="max-w-[1200px] mx-auto py-12 md:py-16 lg:py-20">
+    <footer className="px-[5%] bg-white max-w-[1400px] mx-auto">
+      <motion.div
+        className="max-w-[1400px] mx-auto py-12 md:py-16 lg:py-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.2 } },
+        }}
+      >
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-12 md:gap-8">
-          <div className="flex flex-col items-center md:items-start max-w-sm">
+          <motion.div
+            className="flex flex-col items-center md:items-start max-w-sm"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
             <a href="#" className="text-2xl font-bold font-raleway">
               YourLogo
             </a>
@@ -56,8 +74,14 @@ export default function Footer() {
               We build stunning websites for digital businesses and founders
               that are designed to convert.
             </p>
-          </div>
-          <div className="flex flex-col items-center md:items-start">
+          </motion.div>
+          <motion.div
+            className="flex flex-col items-center md:items-start"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
             <h4 className="font-semibold font-raleway text-lg mb-4">
               Navigation
             </h4>
@@ -73,8 +97,14 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="flex flex-col items-center md:items-start">
+          </motion.div>
+          <motion.div
+            className="flex flex-col items-center md:items-start"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
             <h4 className="font-semibold font-raleway text-lg mb-4">
               Follow Us
             </h4>
@@ -90,14 +120,20 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div className="mt-12 border-t border-neutral-300 pt-8 text-center text-sm text-neutral-500">
+        <motion.div
+          className="mt-12 border-t border-neutral-300 pt-8 text-center text-sm text-neutral-500"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
           <p>
             &copy; {new Date().getFullYear()} Your Company. All Rights Reserved.
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </footer>
   );
 }
