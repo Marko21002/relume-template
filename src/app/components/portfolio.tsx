@@ -17,38 +17,38 @@ export default function Portfolio() {
     {
       title: "E-commerce Platform",
       description: "A full-featured e-commerce site for a fashion brand.",
-      image: "/promo.avif",
+      image: "/Promo.avif",
       category: "Web Design",
     },
     {
       title: "Branding for a Startup",
       description: "A complete branding package for a new tech startup.",
-      image: "/promo.avif",
+      image: "/Promo.avif",
       category: "Branding",
     },
     {
       title: "SEO for a Local Business",
       description:
         "An SEO campaign that boosted a local business's online visibility.",
-      image: "/promo.avif",
+      image: "/Promo.avif",
       category: "SEO",
     },
     {
       title: "Mobile App Design",
       description: "A sleek and intuitive mobile app for a fitness company.",
-      image: "/promo.avif",
+      image: "/Promo.avif",
       category: "Web Design",
     },
     {
       title: "Corporate Website Redesign",
       description: "A modern redesign for a large corporate website.",
-      image: "/promo.avif",
+      image: "/Promo.avif",
       category: "Web Design",
     },
     {
       title: "Logo for a Cafe",
       description: "A charming and memorable logo for a local cafe.",
-      image: "/promo.avif",
+      image: "/Promo.avif",
       category: "Branding",
     },
   ];
