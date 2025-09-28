@@ -8,6 +8,7 @@ import {
   Raleway,
 } from "next/font/google";
 import "./globals.css";
+import ClientLayout from "./components/ClientLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,7 +55,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sofiaSansCondensed.variable} ${sofiaSans.variable} ${playfairDisplay.variable} ${sofiaSans.variable} ${raleway.variable} antialiased`}
       >
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
