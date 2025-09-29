@@ -37,25 +37,37 @@ export default function Services() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const container = containerRef.current;
+    const cards = gsap.utils.toArray(".service-card");
+    cards.forEach((card: any) => {
+      const img = card.querySelector("img");
 
-    if (container) {
-      gsap.fromTo(
-        ".service-card",
-        { y: 50, opacity: 0 },
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+          end: "bottom 60%",
+          scrub: 1.5,
+          toggleActions: "play none none none",
+        },
+      });
+
+      tl.fromTo(
+        card,
+        { y: 100, opacity: 0, scale: 0.9 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.5,
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: container,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
         }
+      ).fromTo(
+        img,
+        { y: -30, scale: 1.1 },
+        { y: 0, scale: 1, duration: 1, ease: "power3.out" },
+        "-=0.8"
       );
-    }
+    });
   }, []);
 
   return (
