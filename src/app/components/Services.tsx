@@ -37,8 +37,8 @@ export default function Services() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const cards = gsap.utils.toArray(".service-card");
-    cards.forEach((card: Element) => {
+    const cards = gsap.utils.toArray(".service-card") as Element[];
+    cards.forEach((card) => {
       const img = card.querySelector("img");
 
       const tl = gsap.timeline({
