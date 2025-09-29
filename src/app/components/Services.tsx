@@ -8,7 +8,8 @@ export default function Services() {
       image: "/discovery.png",
       title: "Discovery call",
       description:
-        "We start with a discovery call to understand your business and goals.",
+        "We start with a discovery call to understand your business needs.",
+      bgColor: "#CBB7F7",
     },
     {
       step: 2,
@@ -16,6 +17,7 @@ export default function Services() {
       title: "Design",
       description:
         "After getting started, we propose different designs to choose from..",
+      bgColor: "#A7D8DE",
     },
     {
       step: 3,
@@ -23,6 +25,7 @@ export default function Services() {
       title: "Development",
       description:
         "After your approval, we build your website and deliver it to you.",
+      bgColor: "#F8C794",
     },
   ];
 
@@ -48,7 +51,7 @@ export default function Services() {
   };
 
   return (
-    <div className="px-[5%] max-w-[1400px] mx-auto py-16 md:py-24 lg:py-28 flex flex-col items-center justify-center">
+    <div className="px-[5%] max-w-[1200px] mx-auto py-16 md:py-24 lg:py-28 flex flex-col items-center justify-center">
       <div className="text-center flex flex-col items-center justify-center gap-4">
         <div className="text-sm ">Process</div>
         <p className="  text-4xl font-raleway font-semibold leading-none">
@@ -70,6 +73,7 @@ export default function Services() {
           <motion.div
             key={service.step}
             className="relative w-full border border-neutral-400 rounded-lg px-6 pt-12 pb-6 flex flex-col items-center justify-between gap-4 text-center"
+            style={{ backgroundColor: service.bgColor }}
             variants={cardVariants}
             custom={index}
           >

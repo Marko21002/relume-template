@@ -55,7 +55,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="px-[5%] max-w-[1400px] mx-auto py-16 md:py-24 lg:py-28 flex flex-col items-center justify-center">
+    <div className="px-[5%] max-w-[1200px] mx-auto py-16 md:py-24 lg:py-28 flex flex-col items-center justify-center">
       <div className="text-center flex flex-col items-center justify-center gap-4">
         <div className="text-sm ">PORTFOLIO</div>
         <p className="text-4xl md:text-5xl font-raleway font-semibold leading-tight">

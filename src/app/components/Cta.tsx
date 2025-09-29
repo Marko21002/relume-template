@@ -38,9 +38,9 @@ export default function Cta() {
   };
 
   return (
-    <div className="px-[5%] max-w-[1400px] mx-auto py-16 md:py-24 lg:py-28">
+    <div className="px-[5%] max-w-[1200px] mx-auto py-16 md:py-24 lg:py-28">
       <motion.div
-        className="ring-1 ring-neutral-400 rounded-lg p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8"
+        className="ring-1 ring-neutral-400 bg-[#F5A3A3] rounded-lg p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

@@ -25,6 +25,7 @@ export default function Pricing() {
         { name: "Blog Setup", price: 400 },
       ],
       isPrimary: false,
+      bgColor: "#A7D8DE",
     },
     {
       name: "Pro",
@@ -45,6 +46,7 @@ export default function Pricing() {
         { name: "Booking System", price: 500 },
       ],
       isPrimary: true,
+      bgColor: "#CBB7F7",
     },
     {
       name: "Premium",
@@ -66,6 +68,7 @@ export default function Pricing() {
         { name: "Mobile App Integration", price: 5000 },
       ],
       isPrimary: false,
+      bgColor: "#F8C794",
     },
   ];
 
@@ -74,7 +77,7 @@ export default function Pricing() {
   };
 
   return (
-    <div className="px-[5%] max-w-[1400px] mx-auto py-16 md:py-24 lg:py-28 flex flex-col items-center justify-center">
+    <div className="px-[5%] max-w-[1200px] mx-auto py-16 md:py-24 lg:py-28 flex flex-col items-center justify-center">
       <div className="text-center flex flex-col items-center justify-center gap-4">
         <div className="text-sm font-semibold bg-neutral-100 text-black px-4 py-1 rounded-full">
           PRICING
@@ -103,11 +106,12 @@ export default function Pricing() {
         {plans.map((plan, index) => (
           <div
             key={plan.name}
-            className={`relative w-full bg-white rounded-2xl p-8 flex flex-col shadow-lg transition-all hover:shadow-2xl ${
+            className={`relative w-full rounded-2xl p-8 flex flex-col shadow-lg transition-all hover:shadow-2xl ${
               plan.isPrimary
                 ? "ring-2 ring-neutral-400"
                 : "ring-1 ring-neutral-200"
             }`}
+            style={{ backgroundColor: plan.bgColor }}
           >
             <div className="flex justify-between items-start">
               <h3 className="text-xl font-raleway font-semibold">

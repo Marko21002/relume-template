@@ -48,7 +48,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="px-[5%] bg-white max-w-[1400px] mx-auto">
+    <footer className="px-[5%] bg-white max-w-[1200px] mx-auto">
       <motion.div
         className="max-w-[1400px] mx-auto py-12 md:py-16 lg:py-20"
         initial="hidden"

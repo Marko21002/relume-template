@@ -5,25 +5,6 @@ import { motion } from "framer-motion";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Services", href: "#" },
-    { name: "Pricing", href: "#" },
-    { name: "FAQ", href: "#" },
-    { name: "Portfolio", href: "#" },
-  ];
-
-  const linkVariants = {
-    hidden: { y: -20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   const buttonVariants = {
     hidden: { x: 20, opacity: 0 },
     visible: {
@@ -37,7 +18,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="px-[5%] max-w-[1400px] mx-auto py-4 flex items-center justify-between">
+      <div className="px-[5%] max-w-[1200px] mx-auto py-4 flex items-center justify-between">
         <a href="#">
           <motion.img
             src="/overdeliver.png"
@@ -48,22 +29,6 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
           />
         </a>
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link, index) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              className="font-semibold text-neutral-600 hover:text-black transition-colors"
-              variants={linkVariants}
-              initial="hidden"
-              animate="visible"
-              custom={index}
-              transition={{ delay: 0.2 * index }}
-            >
-              {link.name}
-            </motion.a>
-          ))}
-        </div>
         <motion.div
           className="hidden md:block"
           variants={buttonVariants}
@@ -72,17 +37,25 @@ export default function Navbar() {
           transition={{ delay: 0.8 }}
         >
           <div className="flex gap-4">
-            <button className="px-4 cursor-pointer py-3 w-full sm:w-auto bg-white text-black ring ring-neutral-400 rounded-lg text-md font-semibold transition-colors hover:bg-neutral-100">
+            <button className="px-3 cursor-pointer py-2 w-full sm:w-auto bg-white text-black ring ring-neutral-400 rounded-lg text-md font-semibold transition-colors hover:bg-neutral-100 flex items-center justify-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.518.759a11.024 11.024 0 004.754 4.754l.759-1.518a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C6.477 18 2 13.523 2 8V3z" />
+              </svg>
               Book a call
             </button>
-            <button className="px-4 cursor-pointer py-3 w-full sm:w-auto bg-black text-white rounded-lg text-md font-semibold transition-colors hover:bg-neutral-800">
+            <button className="px-3 cursor-pointer py-2 w-full sm:w-auto bg-black text-white rounded-lg text-md font-semibold transition-colors hover:bg-neutral-800">
               Get a free re-design
             </button>
           </div>
         </motion.div>
         <button
           onClick={() => setIsMenuOpen(true)}
-          className="px-2 py-2 rounded-full border border-black cursor-pointer md:hidden"
+          className="px-2 py-2 rounded-full  cursor-pointer md:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -146,20 +119,8 @@ export default function Navbar() {
           </button>
         </div>
         <div className="flex flex-col items-center justify-center h-full space-y-8">
-          <nav className="flex flex-col items-center space-y-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-2xl font-raleway hover:text-neutral-600 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
           <div className="w-full px-8 space-y-4">
-            <button className="w-full px-4 py-3 flex items-center justify-center gap-2 bg-white text-black ring ring-neutral-400 rounded-lg text-md font-semibold transition-colors hover:bg-neutral-100">
+            <button className="w-full px-3 py-2 flex items-center justify-center gap-2 bg-white text-black ring ring-neutral-400 rounded-lg text-md font-semibold transition-colors hover:bg-neutral-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -170,7 +131,7 @@ export default function Navbar() {
               </svg>
               Book a call
             </button>
-            <button className="w-full px-4 py-3 bg-black text-white rounded-lg text-md font-semibold transition-colors hover:bg-neutral-800">
+            <button className="w-full px-3 py-2 bg-black text-white rounded-lg text-md font-semibold transition-colors hover:bg-neutral-800">
               Get a free re-design
             </button>
           </div>
