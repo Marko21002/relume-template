@@ -13,7 +13,7 @@ export default function Loader() {
 
     // Text animation
     const text = "OVERDELIVER";
-    const textSpans = text.split("").map((char, index) => {
+    const textSpans = text.split("").map((char) => {
       const span = document.createElement("span");
       span.textContent = char;
       span.style.opacity = "0";

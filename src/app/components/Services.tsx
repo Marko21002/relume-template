@@ -38,7 +38,7 @@ export default function Services() {
 
   useEffect(() => {
     const cards = gsap.utils.toArray(".service-card");
-    cards.forEach((card: any) => {
+    cards.forEach((card: Element) => {
       const img = card.querySelector("img");
 
       const tl = gsap.timeline({
