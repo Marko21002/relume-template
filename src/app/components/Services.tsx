@@ -1,5 +1,9 @@
 "use client";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Services() {
   const services = [
@@ -29,26 +33,29 @@ export default function Services() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
+  const containerRef = useRef(null);
 
-  const cardVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
+  useEffect(() => {
+    const container = containerRef.current;
+
+    if (container) {
+      gsap.fromTo(
+        ".service-card",
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: container,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+  }, []);
 
   return (
     <div className="px-[5%] max-w-[1200px] mx-auto py-16 md:py-24 lg:py-28 flex flex-col items-center justify-center">
@@ -62,22 +69,19 @@ export default function Services() {
           </span>
         </p>
       </div>
-      <motion.div
+      <div
+        ref={containerRef}
         className="flex w-full flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 pt-12 lg:pt-16"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
       >
         {services.map((service, index) => (
-          <motion.div
+          <div
             key={service.step}
-            className="relative w-full border border-neutral-400 rounded-lg px-6 pt-12 pb-6 flex flex-col items-center justify-between gap-4 text-center"
-            style={{ backgroundColor: service.bgColor }}
-            variants={cardVariants}
-            custom={index}
+            className="service-card relative w-full border border-neutral-400 rounded-lg px-6 pt-12 pb-6 flex flex-col items-center justify-between gap-4 text-center"
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-neutral-400 bg-white px-4 py-2">
+            <div
+              className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-neutral-400 px-4 py-2"
+              style={{ backgroundColor: service.bgColor }}
+            >
               <span className="text-sm font-semibold tracking-widest">
                 STEP {service.step}
               </span>
@@ -93,9 +97,9 @@ export default function Services() {
               </h3>
               <p className="text-md text-neutral-600 ">{service.description}</p>
             </div>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
