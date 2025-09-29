@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -73,7 +74,7 @@ export default function Services() {
         ref={containerRef}
         className="flex w-full flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 pt-12 lg:pt-16"
       >
-        {services.map((service, index) => (
+        {services.map((service) => (
           <div
             key={service.step}
             className="service-card relative w-full border border-neutral-400 rounded-lg px-6 pt-12 pb-6 flex flex-col items-center justify-between gap-4 text-center"
@@ -86,7 +87,9 @@ export default function Services() {
                 STEP {service.step}
               </span>
             </div>
-            <img
+            <Image
+              width={500}
+              height={500}
               className="w-full rounded-md object-cover lg:h-64"
               src={service.image}
               alt={service.title}

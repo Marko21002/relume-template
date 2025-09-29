@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Navbar() {
@@ -44,14 +45,19 @@ export default function Navbar() {
       >
         <div className="px-[5%] max-w-[1200px] mx-auto py-4 flex items-center justify-between">
           <a href="#">
-            <motion.img
-              src="/overdeliver.png"
-              alt="overdeliver"
-              className="w-40"
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-            />
+            >
+              <Image
+                src="/overdeliver.png"
+                alt="overdeliver"
+                width={160}
+                height={40}
+                className="w-40"
+              />
+            </motion.div>
           </a>
           <motion.div
             className="hidden md:block"
@@ -124,7 +130,13 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center p-5 border-b border-neutral-200">
           <a href="#">
-            <img src="/overdeliver.png" alt="overdeliver" className="w-40" />
+            <Image
+              src="/overdeliver.png"
+              alt="overdeliver"
+              width={160}
+              height={40}
+              className="w-40"
+            />
           </a>
           <button onClick={() => setIsMenuOpen(false)} className="p-2">
             <svg
