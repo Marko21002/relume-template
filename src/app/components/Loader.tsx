@@ -13,15 +13,17 @@ export default function Loader() {
 
     // Text animation
     const text = "OVERDELIVER";
-    const textSpans = text.split("").map((char) => {
-      const span = document.createElement("span");
-      span.textContent = char;
-      span.style.opacity = "0";
-      span.style.transform = "translateY(20px)";
-      return span;
-    });
     const textContainer = document.querySelector(".loader-text");
+
     if (textContainer) {
+      const textSpans = text.split("").map((char) => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        span.style.opacity = "0";
+        span.style.transform = "translateY(20px)";
+        return span;
+      });
+      textContainer.innerHTML = "";
       textSpans.forEach((span) => textContainer.appendChild(span));
       tl.to(textSpans, {
         opacity: 1,
@@ -32,42 +34,13 @@ export default function Loader() {
       });
     }
 
-    // Panels animation
-    tl.to(
-      ".panel-1",
-      {
-        height: "100%",
-        duration: 0.8,
-        ease: "power3.inOut",
-      },
-      0
-    )
-      .to(
-        ".panel-2",
-        {
-          height: "100%",
-          duration: 0.8,
-          ease: "power3.inOut",
-        },
-        0.2
-      )
-      .to(
-        ".panel-3",
-        {
-          height: "100%",
-          duration: 0.8,
-          ease: "power3.inOut",
-        },
-        0.4
-      );
-
     // Counter and progress bar animation
     const counter = { value: 0 };
     tl.to(
       counter,
       {
         value: 100,
-        duration: 1.5,
+        duration: 2,
         ease: "power2.inOut",
         onUpdate: () => {
           if (counterRef.current) {
@@ -82,7 +55,7 @@ export default function Loader() {
           }
         },
       },
-      "-=1.2"
+      0
     );
 
     return () => {
@@ -96,31 +69,17 @@ export default function Loader() {
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white text-black"
       exit={{ opacity: 0, transition: { duration: 0.5, delay: 0.2 } }}
     >
-      <div className="absolute inset-0 flex">
-        <div
-          className="panel-1 w-1/3 bg-neutral-900"
-          style={{ height: "0%" }}
-        ></div>
-        <div
-          className="panel-2 w-1/3 bg-neutral-700"
-          style={{ height: "0%" }}
-        ></div>
-        <div
-          className="panel-3 w-1/3 bg-neutral-500"
-          style={{ height: "0%" }}
-        ></div>
-      </div>
-      <div className="relative z-10 flex flex-col items-center">
-        <h1 className="loader-text text-4xl md:text-6xl font-raleway font-bold text-white mb-8"></h1>
-        <div className="absolute bottom-[-120px] w-full max-w-sm flex flex-col items-center">
-          <p className="text-6xl font-raleway font-semibold text-white">
+      <div className="flex flex-col items-center text-center">
+        <h1 className="loader-text text-4xl md:text-6xl font-raleway font-bold text-black mb-8"></h1>
+        <div className="w-full max-w-xs flex flex-col items-center">
+          <p className="text-6xl font-raleway font-semibold text-black">
             <span ref={counterRef}>0</span>
             <span className="text-4xl">%</span>
           </p>
-          <div className="w-full bg-neutral-200/50 h-1 mt-4 rounded-full overflow-hidden">
+          <div className="w-full bg-neutral-200 h-1 mt-4 rounded-full overflow-hidden">
             <div
               ref={progressBarRef}
-              className="h-full bg-white"
+              className="h-full bg-black"
               style={{ width: "0%" }}
             ></div>
           </div>
