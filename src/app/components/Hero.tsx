@@ -39,7 +39,7 @@ export const Hero = () => {
   };
 
   return (
-    <div className="px-[5%] py-12 max-w-[1200px] mx-auto md:py-24 lg:py-28 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12">
+    <div className="px-[5%] pt-28 pb-12 max-w-[1200px] mx-auto md:pt-40 md:pb-24 lg:pt-44 lg:pb-28 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12">
       <motion.div
         className="flex flex-col items-center lg:items-start justify-center gap-4 lg:w-1/2"
         variants={containerVariants}

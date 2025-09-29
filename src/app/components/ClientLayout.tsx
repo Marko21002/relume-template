@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Loader from "./Loader";
+import Navbar from "./navbar";
+import SmoothScroll from "./SmoothScroll";
+import Footer from "./Footer";
 
 export default function ClientLayout({
   children,
@@ -14,7 +17,7 @@ export default function ClientLayout({
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3200); // Updated duration to match the new loader animation
+    }, 3200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -22,7 +25,15 @@ export default function ClientLayout({
   return (
     <>
       <AnimatePresence>{loading && <Loader />}</AnimatePresence>
-      {!loading && children}
+      {!loading && (
+        <>
+          <Navbar />
+          <SmoothScroll>
+            {children}
+            <Footer />
+          </SmoothScroll>
+        </>
+      )}
     </>
   );
 }
