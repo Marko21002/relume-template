@@ -105,6 +105,25 @@ export default function About() {
           {/* Artyom Profile */}
           <motion.div variants={itemVariants} className="flex flex-col">
             <div className="relative">
+              <motion.div
+                className="absolute -top-8 left-1/2 -translate-x-1/2 z-10 w-20 h-20"
+                initial={{ scale: 0, opacity: 0, y: 20, rotate: -15 }}
+                whileInView={{ scale: 1, opacity: 1, y: 0, rotate: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.4,
+                  type: "spring",
+                  stiffness: 120,
+                }}
+                viewport={{ once: true }}
+              >
+                <Image
+                  src={CrownImage}
+                  alt="Crown"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </motion.div>
               <Image
                 src={ArtemImage}
                 alt="Artyom, Partner and Sales Representative"

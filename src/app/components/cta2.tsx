@@ -1,16 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import MailImage from "../../../public/mail2.png";
 
 export default function Cta2() {
   return (
     <div className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="relative mx-auto max-w-[1200px] overflow-hidden rounded-2xl bg-neutral-100 p-8 md:p-12 lg:p-16">
-        {/* Space for left illustration */}
-        <div className="absolute bottom-0 left-0 top-0 w-1/3"></div>
+        {/* Left Illustration */}
+        <motion.div
+          className="absolute -bottom-16 -left-16 hidden h-72 w-72 lg:block"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <Image src={MailImage} alt="Newsletter" />
+        </motion.div>
 
-        {/* Space for right illustration */}
-        <div className="absolute bottom-0 right-0 top-0 w-1/3"></div>
+        {/* Right Illustration */}
+        <motion.div
+          className="absolute -bottom-16 -right-16 hidden h-72 w-72 lg:block"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <Image src={MailImage} alt="Newsletter" className="scale-x-[-1]" />
+        </motion.div>
 
         <div className="relative z-10 text-center">
           <motion.div

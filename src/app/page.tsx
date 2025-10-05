@@ -9,6 +9,7 @@ import Cta2 from "./components/cta2";
 import Contact from "./components/Contact";
 import Mission from "./components/Mission";
 import About from "./components/About";
+import Book from "./components/Book";
 export default function Home() {
   return (
     <div>
@@ -20,6 +21,7 @@ export default function Home() {
       <Mission />
       <Faq />
       <About />
+      <Book />
       <Contact />
       <Cta />
     </div>

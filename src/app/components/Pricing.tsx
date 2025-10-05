@@ -13,6 +13,8 @@ interface BasePlan {
 interface PricedPlan extends BasePlan {
   monthlyPrice: number;
   yearlyPrice: number;
+  monthlySalePrice?: number;
+  yearlySalePrice?: number;
   isCustom?: false;
 }
 
@@ -52,6 +54,8 @@ export default function Pricing() {
         "Keep your website secure, fast, and up-to-date with our essential maintenance plan.",
       monthlyPrice: 49,
       yearlyPrice: 490,
+      monthlySalePrice: 29,
+      yearlySalePrice: 290,
       features: [
         "Weekly backups",
         "Security monitoring",
@@ -83,6 +87,8 @@ export default function Pricing() {
         "Everything in Maintenance, plus ongoing design for your marketing needs.",
       monthlyPrice: 149,
       yearlyPrice: 1490,
+      monthlySalePrice: 99,
+      yearlySalePrice: 990,
       features: [
         "Everything in Maintenance",
         "Unlimited social media graphics",
@@ -132,18 +138,21 @@ export default function Pricing() {
       description:
         "A professional one-page website to capture leads and showcase your brand.",
       price: 199,
+      salePrice: 149,
     },
     {
       name: "Business Website",
       description:
         "A complete, multi-page website to establish a strong online presence for your business.",
       price: 499,
+      salePrice: 399,
     },
     {
       name: "E-commerce Store",
       description:
         "A powerful online store to sell your products, with secure payment integrations.",
       price: 999,
+      salePrice: 799,
     },
   ];
 
@@ -255,11 +264,36 @@ export default function Pricing() {
                   {plan.isCustom ? (
                     <p className="text-4xl font-bold font-raleway">Custom</p>
                   ) : (
-                    <p className="text-4xl font-bold font-raleway">
-                      $
-                      {isYearly
-                        ? plan.yearlyPrice.toLocaleString()
-                        : plan.monthlyPrice.toLocaleString()}
+                    <div className="flex items-baseline gap-2">
+                      {isYearly ? (
+                        plan.yearlySalePrice ? (
+                          <>
+                            <p className="text-2xl font-bold font-raleway text-neutral-500 line-through">
+                              ${plan.yearlyPrice.toLocaleString()}
+                            </p>
+                            <p className="text-4xl font-bold font-raleway">
+                              ${plan.yearlySalePrice.toLocaleString()}
+                            </p>
+                          </>
+                        ) : (
+                          <p className="text-4xl font-bold font-raleway">
+                            ${plan.yearlyPrice.toLocaleString()}
+                          </p>
+                        )
+                      ) : plan.monthlySalePrice ? (
+                        <>
+                          <p className="text-2xl font-bold font-raleway text-neutral-500 line-through">
+                            ${plan.monthlyPrice.toLocaleString()}
+                          </p>
+                          <p className="text-4xl font-bold font-raleway">
+                            ${plan.monthlySalePrice.toLocaleString()}
+                          </p>
+                        </>
+                      ) : (
+                        <p className="text-4xl font-bold font-raleway">
+                          ${plan.monthlyPrice.toLocaleString()}
+                        </p>
+                      )}
                       <span
                         className={`text-lg font-medium ${
                           plan.isPrimary
@@ -269,7 +303,7 @@ export default function Pricing() {
                       >
                         /{isYearly ? "yr" : "mo"}
                       </span>
-                    </p>
+                    </div>
                   )}
                 </div>
                 <button
@@ -324,9 +358,20 @@ export default function Pricing() {
                 <h3 className="text-xl font-raleway font-semibold text-black">
                   {service.name}
                 </h3>
-                <p className="text-xl font-bold font-raleway text-black">
-                  ${service.price.toLocaleString()}
-                </p>
+                {service.salePrice ? (
+                  <div className="flex flex-col items-end">
+                    <p className="text-lg font-bold font-raleway text-neutral-500 line-through">
+                      ${service.price.toLocaleString()}
+                    </p>
+                    <p className="text-xl font-bold font-raleway text-black">
+                      ${service.salePrice.toLocaleString()}
+                    </p>
+                  </div>
+                ) : (
+                  <p className="text-xl font-bold font-raleway text-black">
+                    ${service.price.toLocaleString()}
+                  </p>
+                )}
               </div>
               <p className="mt-2 text-neutral-600 flex-grow">
                 {service.description}
