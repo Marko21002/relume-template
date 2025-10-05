@@ -1,0 +1,55 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export default function Cta2() {
+  return (
+    <div className="px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="relative mx-auto max-w-[1200px] overflow-hidden rounded-2xl bg-neutral-100 p-8 md:p-12 lg:p-16">
+        {/* Space for left illustration */}
+        <div className="absolute bottom-0 left-0 top-0 w-1/3"></div>
+
+        {/* Space for right illustration */}
+        <div className="absolute bottom-0 right-0 top-0 w-1/3"></div>
+
+        <div className="relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center"
+          >
+            <p className="text-sm font-semibold uppercase tracking-widest text-black">
+              Newsletter
+            </p>
+            <h2 className="mt-4 max-w-lg font-raleway text-4xl font-semibold text-black md:text-5xl">
+              TocTocToc! News delivered right where you are
+            </h2>
+          </motion.div>
+
+          <motion.form
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="w-full max-w-sm rounded-lg bg-white px-4 py-3 text-black ring-1 ring-neutral-300 transition-shadow focus:ring-2 focus:ring-black"
+            />
+            <button
+              type="submit"
+              className="w-full sm:w-auto rounded-lg bg-black px-6 py-3 font-semibold text-white transition-colors hover:bg-neutral-800"
+            >
+              Subscribe
+            </button>
+          </motion.form>
+        </div>
+      </div>
+    </div>
+  );
+}

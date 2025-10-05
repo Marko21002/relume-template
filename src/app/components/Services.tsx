@@ -14,7 +14,6 @@ export default function Services() {
       title: "Discovery call",
       description:
         "We start with a discovery call to understand your business needs.",
-      bgColor: "#CBB7F7",
     },
     {
       step: 2,
@@ -22,7 +21,6 @@ export default function Services() {
       title: "Design",
       description:
         "After getting started, we propose different designs to choose from..",
-      bgColor: "#A7D8DE",
     },
     {
       step: 3,
@@ -30,7 +28,6 @@ export default function Services() {
       title: "Development",
       description:
         "After your approval, we build your website and deliver it to you.",
-      bgColor: "#F8C794",
     },
   ];
 
@@ -89,12 +86,9 @@ export default function Services() {
         {services.map((service) => (
           <div
             key={service.step}
-            className="service-card relative w-full border border-neutral-400 rounded-lg px-6 pt-12 pb-6 flex flex-col items-center justify-between gap-4 text-center"
+            className="service-card relative w-full bg-neutral-50 ring-1 ring-neutral-200 rounded-2xl px-6 pt-12 pb-6 flex flex-col items-center justify-between gap-4 text-center"
           >
-            <div
-              className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-neutral-400 px-4 py-2"
-              style={{ backgroundColor: service.bgColor }}
-            >
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white ring-1 ring-neutral-200 px-4 py-2">
               <span className="text-sm font-semibold tracking-widest">
                 STEP {service.step}
               </span>

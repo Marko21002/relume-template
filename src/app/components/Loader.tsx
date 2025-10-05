@@ -28,9 +28,9 @@ export default function Loader() {
       tl.to(textSpans, {
         opacity: 1,
         y: 0,
-        stagger: 0.1,
-        ease: "power3.out",
-        duration: 1,
+        stagger: 0.05,
+        ease: "power4.out",
+        duration: 0.5,
       });
     }
 
@@ -40,8 +40,8 @@ export default function Loader() {
       counter,
       {
         value: 100,
-        duration: 2,
-        ease: "power2.inOut",
+        duration: 1,
+        ease: "power3.inOut",
         onUpdate: () => {
           if (counterRef.current) {
             (counterRef.current as HTMLElement).textContent = `${Math.round(
