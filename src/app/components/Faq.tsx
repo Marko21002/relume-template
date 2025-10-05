@@ -39,13 +39,11 @@ export default function Faq() {
   return (
     <div className="px-[5%] max-w-[1200px] mx-auto py-16 md:py-24 lg:py-28 flex flex-col items-center justify-center">
       <div className="text-center flex flex-col items-center justify-center gap-4">
-        <div className="text-sm ">FAQ</div>
-        <p className="text-4xl font-raleway font-semibold leading-none">
+        <div className="text-sm font-semibold text-neutral-500">FAQ</div>
+        <h2 className="text-4xl md:text-5xl font-raleway font-semibold leading-tight mt-4">
           Frequently Asked <br />
-          <span className="font-playfair-display font-normal italic">
-            Questions
-          </span>
-        </p>
+          <span className="font-playfair-display italic">Questions</span>
+        </h2>
       </div>
       <div className="w-full max-w-3xl mt-12 lg:mt-16 space-y-4">
         {faqs.map((faq, index) => (

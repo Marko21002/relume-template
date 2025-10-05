@@ -20,11 +20,11 @@ export default function Cta2() {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <p className="text-sm font-semibold uppercase tracking-widest text-black">
-              Newsletter
+            <p className="text-sm font-semibold uppercase tracking-widest text-neutral-500">
+              NEWSLETTER
             </p>
             <h2 className="mt-4 max-w-lg font-raleway text-4xl font-semibold text-black md:text-5xl">
-              TocTocToc! News delivered right where you are
+              Get news delivered right to your inbox
             </h2>
           </motion.div>
 

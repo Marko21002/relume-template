@@ -79,12 +79,18 @@ export default function Cta() {
         variants={containerVariants}
       >
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <motion.div
+            className="text-sm font-semibold text-neutral-400"
+            variants={itemVariants}
+          >
+            GET IN TOUCH
+          </motion.div>
           <motion.h2
-            className="text-3xl md:text-4xl font-raleway font-semibold leading-tight"
+            className="text-3xl md:text-4xl font-raleway font-semibold leading-tight mt-4"
             variants={itemVariants}
           >
             Ready to <br />
-            <span className="font-playfair-display font-normal italic">
+            <span className="font-playfair-display italic">
               grow your business?
             </span>
           </motion.h2>

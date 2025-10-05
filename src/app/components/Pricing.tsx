@@ -24,10 +24,11 @@ type SubscriptionPlan = PricedPlan | CustomPlan;
 
 export default function Pricing() {
   const [isYearly, setIsYearly] = useState(false);
+  const [isMonthly, setIsMonthly] = useState(true);
 
   const subscriptionPlans: SubscriptionPlan[] = [
     {
-      name: "Maintain",
+      name: "Maintenance",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -48,21 +49,20 @@ export default function Pricing() {
         </svg>
       ),
       description:
-        "For businesses that need a reliable partner to keep their website running smoothly.",
-      monthlyPrice: 299,
-      yearlyPrice: 2990,
+        "Keep your website secure, fast, and up-to-date with our essential maintenance plan.",
+      monthlyPrice: 49,
+      yearlyPrice: 490,
       features: [
         "Weekly backups",
         "Security monitoring",
         "Performance optimization",
-        "2 hours of content updates",
         "Plugin & theme updates",
         "Monthly health report",
       ],
       isPrimary: false,
     },
     {
-      name: "Grow",
+      name: "Maintenance + Design",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -80,21 +80,20 @@ export default function Pricing() {
         </svg>
       ),
       description:
-        "For businesses ready to scale with ongoing design, development, and strategy.",
-      monthlyPrice: 799,
-      yearlyPrice: 7990,
+        "Everything in Maintenance, plus ongoing design for your marketing needs.",
+      monthlyPrice: 149,
+      yearlyPrice: 1490,
       features: [
-        "Everything in Maintain",
-        "Unlimited design tasks",
-        "New feature development",
-        "SEO & content strategy",
+        "Everything in Maintenance",
+        "Unlimited social media graphics",
+        "Bi-weekly content updates",
         "Priority support",
-        "Bi-weekly strategy calls",
+        "Monthly design strategy call",
       ],
       isPrimary: true,
     },
     {
-      name: "Scale",
+      name: "Custom",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -114,14 +113,13 @@ export default function Pricing() {
         </svg>
       ),
       description:
-        "A dedicated partnership for businesses requiring custom solutions and maximum impact.",
+        "A tailored plan for businesses with specific design, development, or marketing needs.",
       features: [
-        "Everything in Grow",
         "Dedicated account manager",
-        "Custom API integrations",
-        "Advanced analytics & reporting",
-        "A/B testing and conversion optimization",
-        "Full development team access",
+        "Custom development",
+        "Advanced SEO & marketing",
+        "Full team access",
+        "Bespoke solutions",
       ],
       isPrimary: false,
       isCustom: true,
@@ -130,22 +128,22 @@ export default function Pricing() {
 
   const oneTimeProjects = [
     {
-      name: "Startup Website",
+      name: "Landing Page",
       description:
-        "A beautiful, responsive 5-page site to launch your business. Delivered in 2-3 weeks.",
-      price: 2499,
+        "A professional one-page website to capture leads and showcase your brand.",
+      price: 199,
+    },
+    {
+      name: "Business Website",
+      description:
+        "A complete, multi-page website to establish a strong online presence for your business.",
+      price: 499,
     },
     {
       name: "E-commerce Store",
       description:
-        "A complete online store to sell your products, with payment integrations. Delivered in 4-6 weeks.",
-      price: 4999,
-    },
-    {
-      name: "Website Audit",
-      description:
-        "A comprehensive audit of your site's performance, SEO, and UX with an actionable report.",
-      price: 499,
+        "A powerful online store to sell your products, with secure payment integrations.",
+      price: 999,
     },
   ];
 
@@ -182,145 +180,164 @@ export default function Pricing() {
           </span>
         </h2>
         <p className="mt-2 text-neutral-600 max-w-2xl">
-          Choose a subscription or a one-time project. Get a dedicated partner
-          for your design and development needs.
+          Choose a one-time project to launch your website, or a subscription to
+          keep it growing.
         </p>
       </div>
 
       <div className="flex items-center justify-center gap-4 mt-10">
-        <span className="font-medium">Monthly</span>
         <button
-          onClick={() => setIsYearly(!isYearly)}
-          className={`relative w-12 h-6 rounded-full transition-colors focus:outline-none ${
-            isYearly ? "bg-black" : "bg-neutral-200"
+          onClick={() => setIsMonthly(true)}
+          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            isMonthly
+              ? "bg-black text-white"
+              : "bg-neutral-200 text-black hover:bg-neutral-300"
           }`}
         >
-          <span
-            className={`absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform ${
-              isYearly ? "transform translate-x-6" : ""
-            }`}
-          />
+          Monthly
         </button>
-        <span className="font-medium">
-          Yearly <span className="text-sm text-green-600">(Save 15%)</span>
-        </span>
+        <button
+          onClick={() => setIsMonthly(false)}
+          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            !isMonthly
+              ? "bg-black text-white"
+              : "bg-neutral-200 text-black hover:bg-neutral-300"
+          }`}
+        >
+          One-Time
+        </button>
       </div>
-
-      <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12 lg:pt-16 items-start">
-        {subscriptionPlans.map((plan) => (
-          <div
-            key={plan.name}
-            className={`rounded-2xl p-8 flex flex-col h-full ${
-              plan.isPrimary
-                ? "bg-black text-white"
-                : "bg-neutral-50 ring-1 ring-neutral-200"
-            }`}
-          >
-            <div className="flex items-center gap-4">
-              {plan.icon}
-              <h3 className="text-xl font-raleway font-semibold">
-                {plan.name}
-              </h3>
-            </div>
-            <p
-              className={`mt-4 ${
-                plan.isPrimary ? "text-neutral-300" : "text-neutral-600"
-              }`}
-            >
-              {plan.description}
-            </p>
-            <div className="my-6">
-              {plan.isCustom ? (
-                <p className="text-4xl font-bold font-raleway">Custom</p>
-              ) : (
-                <p className="text-4xl font-bold font-raleway">
-                  $
-                  {isYearly
-                    ? plan.yearlyPrice.toLocaleString()
-                    : plan.monthlyPrice.toLocaleString()}
-                  <span
-                    className={`text-lg font-medium ${
-                      plan.isPrimary ? "text-neutral-300" : "text-neutral-500"
-                    }`}
-                  >
-                    /{isYearly ? "yr" : "mo"}
-                  </span>
-                </p>
-              )}
-            </div>
+      {isMonthly ? (
+        <>
+          <div className="flex items-center justify-center gap-4 mt-10">
+            <span className="font-medium">Monthly</span>
             <button
-              className={`w-full px-4 py-3 rounded-lg text-md font-semibold transition-colors ${
-                plan.isPrimary
-                  ? "bg-white text-black hover:bg-neutral-200"
-                  : "bg-white ring-1 ring-neutral-200 text-black hover:bg-neutral-100"
+              onClick={() => setIsYearly(!isYearly)}
+              className={`relative w-12 h-6 rounded-full transition-colors focus:outline-none ${
+                isYearly ? "bg-black" : "bg-neutral-200"
               }`}
             >
-              {plan.isCustom ? "Book a Call" : "Get started"}
+              <span
+                className={`absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform ${
+                  isYearly ? "transform translate-x-6" : ""
+                }`}
+              />
             </button>
-            <hr
-              className={`my-8 ${
-                plan.isPrimary ? "border-neutral-700" : "border-neutral-200"
-              }`}
-            />
-            <p
-              className={`font-semibold ${
-                plan.isPrimary ? "text-white" : "text-black"
-              }`}
-            >
-              {plan.name} includes:
-            </p>
-            <ul className="mt-4 space-y-3">
-              {plan.features.map((feature) => (
-                <li key={feature} className="flex items-center gap-3">
-                  <CheckmarkIcon />
-                  <span
-                    className={
-                      plan.isPrimary ? "text-neutral-300" : "text-neutral-600"
-                    }
-                  >
-                    {feature}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <span className="font-medium">
+              Yearly{" "}
+              <span className="text-sm text-green-600">(2 months free!)</span>
+            </span>
           </div>
-        ))}
-      </div>
-
-      <div className="text-center mt-24 w-full">
-        <h3 className="text-3xl md:text-4xl font-raleway font-semibold leading-tight">
-          One-Time Projects
-        </h3>
-        <p className="mt-4 text-neutral-600 max-w-2xl mx-auto">
-          Need a one-off project? We&apos;ve got you covered. Get a fixed price
-          for a specific scope of work.
-        </p>
-      </div>
-
-      <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12 lg:pt-16 items-start">
-        {oneTimeProjects.map((service) => (
-          <div
-            key={service.name}
-            className="bg-neutral-50 ring-1 ring-neutral-200 rounded-2xl p-8 flex flex-col flex-grow h-full"
-          >
-            <div className="flex justify-between items-start">
-              <h3 className="text-xl font-raleway font-semibold text-black">
-                {service.name}
-              </h3>
-              <p className="text-xl font-bold font-raleway text-black">
-                ${service.price.toLocaleString()}
+          <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12 lg:pt-16 items-start">
+            {subscriptionPlans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`rounded-2xl p-8 flex flex-col h-full ${
+                  plan.isPrimary
+                    ? "bg-black text-white"
+                    : "bg-neutral-50 ring-1 ring-neutral-200"
+                }`}
+              >
+                <div className="flex items-center gap-4">
+                  {plan.icon}
+                  <h3 className="text-xl font-raleway font-semibold">
+                    {plan.name}
+                  </h3>
+                </div>
+                <p
+                  className={`mt-4 ${
+                    plan.isPrimary ? "text-neutral-300" : "text-neutral-600"
+                  }`}
+                >
+                  {plan.description}
+                </p>
+                <div className="my-6">
+                  {plan.isCustom ? (
+                    <p className="text-4xl font-bold font-raleway">Custom</p>
+                  ) : (
+                    <p className="text-4xl font-bold font-raleway">
+                      $
+                      {isYearly
+                        ? plan.yearlyPrice.toLocaleString()
+                        : plan.monthlyPrice.toLocaleString()}
+                      <span
+                        className={`text-lg font-medium ${
+                          plan.isPrimary
+                            ? "text-neutral-300"
+                            : "text-neutral-500"
+                        }`}
+                      >
+                        /{isYearly ? "yr" : "mo"}
+                      </span>
+                    </p>
+                  )}
+                </div>
+                <button
+                  className={`w-full px-4 py-3 rounded-lg text-md font-semibold transition-colors ${
+                    plan.isPrimary
+                      ? "bg-white text-black hover:bg-neutral-200"
+                      : "bg-white ring-1 ring-neutral-200 text-black hover:bg-neutral-100"
+                  }`}
+                >
+                  {plan.isCustom ? "Book a Call" : "Get started"}
+                </button>
+                <hr
+                  className={`my-8 ${
+                    plan.isPrimary ? "border-neutral-700" : "border-neutral-200"
+                  }`}
+                />
+                <p
+                  className={`font-semibold ${
+                    plan.isPrimary ? "text-white" : "text-black"
+                  }`}
+                >
+                  {plan.name} includes:
+                </p>
+                <ul className="mt-4 space-y-3">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-3">
+                      <CheckmarkIcon />
+                      <span
+                        className={
+                          plan.isPrimary
+                            ? "text-neutral-300"
+                            : "text-neutral-600"
+                        }
+                      >
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </>
+      ) : (
+        <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12 lg:pt-16 items-start">
+          {oneTimeProjects.map((service) => (
+            <div
+              key={service.name}
+              className="bg-neutral-50 ring-1 ring-neutral-200 rounded-2xl p-8 flex flex-col flex-grow h-full"
+            >
+              <div className="flex justify-between items-start">
+                <h3 className="text-xl font-raleway font-semibold text-black">
+                  {service.name}
+                </h3>
+                <p className="text-xl font-bold font-raleway text-black">
+                  ${service.price.toLocaleString()}
+                </p>
+              </div>
+              <p className="mt-2 text-neutral-600 flex-grow">
+                {service.description}
               </p>
+              <button className="mt-6 w-full px-4 py-3 rounded-lg text-md font-semibold bg-white ring-1 ring-neutral-200 text-black hover:bg-neutral-100 transition-colors">
+                Get a quote
+              </button>
             </div>
-            <p className="mt-2 text-neutral-600 flex-grow">
-              {service.description}
-            </p>
-            <button className="mt-6 w-full px-4 py-3 rounded-lg text-md font-semibold bg-white ring-1 ring-neutral-200 text-black hover:bg-neutral-100 transition-colors">
-              Get a quote
-            </button>
-          </div>
-        ))}
-      </div>
-
+          ))}
+        </div>
+      )}
       <div className="mt-16 w-full max-w-6xl bg-black rounded-2xl p-8 flex flex-col md:flex-row justify-between items-center gap-6">
         <h3 className="text-2xl font-raleway font-semibold text-white text-center md:text-left">
           Have Questions?

@@ -70,14 +70,14 @@ export default function Services() {
   return (
     <div className="px-[5%] max-w-[1200px] mx-auto py-16 md:py-24 lg:py-28 flex flex-col items-center justify-center">
       <div className="text-center flex flex-col items-center justify-center gap-4">
-        <div className="text-sm ">Process</div>
-        <p className="  text-4xl font-raleway font-semibold leading-none">
+        <div className="text-sm font-semibold text-neutral-500">
+          OUR PROCESS
+        </div>
+        <h2 className="text-4xl md:text-5xl font-raleway font-semibold leading-tight mt-4">
           Receive your <br />
           website{" "}
-          <span className="font-playfair-display font-normal italic">
-            in two weeks
-          </span>
-        </p>
+          <span className="font-playfair-display italic">in two weeks</span>
+        </h2>
       </div>
       <div
         ref={containerRef}
