@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import Computer from "../../../public/Computer.svg";
+import Computer from "../../../public/Hero.jpg";
 
 export const Hero = () => {
   const containerVariants = {
@@ -39,9 +39,9 @@ export const Hero = () => {
   };
 
   return (
-    <div className="px-[5%] pt-20 pb-12 max-w-[1200px] mx-auto md:pt-40 md:pb-24 lg:pt-44 lg:pb-28 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12">
+    <div className="px-[5%] pt-20 pb-12 max-w-[1200px] mx-auto md:pt-40 md:pb-24 lg:pt-44 lg:pb-28 flex flex-col items-center justify-center gap-12">
       <motion.div
-        className="flex flex-col items-center lg:items-start justify-center gap-4 lg:w-1/2"
+        className="flex flex-col items-center justify-center gap-4 max-w-3xl"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -53,7 +53,7 @@ export const Hero = () => {
           DESIGN THAT DELIVERS
         </motion.div>
         <motion.h1
-          className="text-4xl text-center lg:text-left md:text-6xl"
+          className="text-4xl text-center md:text-10xl"
           variants={itemVariants}
         >
           <span className="font-playfair-display italic">
@@ -66,14 +66,14 @@ export const Hero = () => {
           </span>
         </motion.h1>
         <motion.div
-          className="text-md text-center sm:max-w-[80%] lg:text-left text-neutral-600"
+          className="text-md text-center sm:max-w-[80%] text-neutral-600"
           variants={itemVariants}
         >
           We build stunning, high-performing websites designed to convert
           visitors into customers and elevate your brand.
         </motion.div>
         <motion.div
-          className="flex w-full flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4"
+          className="flex w-full flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           variants={itemVariants}
         >
           <button className="px-3 cursor-pointer py-2 w-full sm:w-auto bg-black text-white rounded-lg text-md font-semibold transition-colors hover:bg-neutral-800 flex items-center justify-center gap-2">
@@ -93,7 +93,7 @@ export const Hero = () => {
         </motion.div>
       </motion.div>
       <motion.div
-        className="relative mt-4 lg:mt-0 w-full lg:w-1/2 max-w-5xl flex items-center justify-center"
+        className="relative w-full max-w-5xl flex items-center justify-center"
         variants={imageVariants}
         initial="hidden"
         animate="visible"

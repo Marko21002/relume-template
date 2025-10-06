@@ -1,140 +1,90 @@
 "use client";
-import Image from "next/image";
-import CtaImage from "../../../public/cta.png";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import Image from "next/image";
 
 export default function Cta() {
-  const iconRef = useRef<SVGPathElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (iconRef.current) {
-      const length = iconRef.current.getTotalLength();
-      gsap.set(iconRef.current, {
-        strokeDasharray: length,
-        strokeDashoffset: length,
-      });
-
-      gsap.to(iconRef.current, {
-        strokeDashoffset: 0,
-        duration: 1,
-        ease: "power1.inOut",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      });
-    }
-  }, []);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.2, delayChildren: 0.1 },
     },
   };
 
   const itemVariants = {
-    hidden: { x: -20, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
-  const imageVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
   };
 
   return (
-    <div
-      ref={containerRef}
-      className="px-[5%] max-w-[1200px] mx-auto py-16 md:py-24 lg:py-28"
-    >
-      <motion.div
-        className="bg-black text-white rounded-2xl p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
-      >
-        <div className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+    <div className="px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="relative mx-auto max-w-[1200px] overflow-hidden rounded-3xl bg-black p-8 md:p-12 lg:p-16 text-center">
+        <div className="absolute -inset-4 bg-white/10 blur-3xl rounded-full" />
+        <motion.div
+          className="relative z-10 flex flex-col items-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={containerVariants}
+        >
           <motion.div
-            className="text-sm font-semibold text-neutral-400"
+            className="inline-block px-3 py-1 text-sm font-semibold text-neutral-400 border border-neutral-700 rounded-full"
             variants={itemVariants}
           >
-            GET IN TOUCH
+            GET STARTED
           </motion.div>
           <motion.h2
-            className="text-3xl md:text-4xl font-raleway font-semibold leading-tight mt-4"
+            className="text-4xl md:text-5xl font-raleway font-semibold leading-tight mt-6 text-white"
             variants={itemVariants}
           >
-            Ready to <br />
-            <span className="font-playfair-display italic">
-              grow your business?
-            </span>
+            Start Your Journey with Confidence
           </motion.h2>
           <motion.p
-            className="mt-4 text-md text-neutral-300"
+            className="mt-4 text-md text-neutral-300 max-w-2xl"
             variants={itemVariants}
           >
-            Let&apos;s build a stunning website that converts visitors into
-            customers and takes your business to the next level.
+            Embrace a risk-free journey with our satisfaction guarantee — your
+            success is not just a goal, but our commitment.
           </motion.p>
           <motion.div
-            className="mt-8 flex w-full flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
             variants={itemVariants}
           >
-            <button className="px-4 py-3 w-full sm:w-auto bg-white text-black ring-1 ring-neutral-400 rounded-lg text-md font-semibold transition-colors hover:bg-neutral-200 flex items-center justify-center gap-2">
+            <button className="px-6 py-3 w-full sm:w-auto bg-white text-black rounded-lg text-md font-semibold transition-colors hover:bg-neutral-200 flex items-center justify-center gap-2">
+              Book a Free Consultation
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                stroke="currentColor"
-                strokeWidth="1"
+                className="w-5 h-5"
               >
                 <path
-                  ref={iconRef}
-                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.518.759a11.024 11.024 0 004.754 4.754l.759-1.518a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C6.477 18 2 13.523 2 8V3z"
+                  fillRule="evenodd"
+                  d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                  clipRule="evenodd"
                 />
               </svg>
-              Book a call
-            </button>
-            <button className="px-4 py-3 w-full sm:w-auto rounded-lg text-md font-semibold transition-colors bg-transparent ring-1 ring-white hover:bg-white hover:text-black">
-              Get a free re-design
             </button>
           </motion.div>
-        </div>
-        <motion.div
-          className="lg:w-1/2 w-full h-64 lg:h-auto  flex items-center justify-center"
-          variants={imageVariants}
-        >
-          <span className="text-neutral-500">
-            <Image src={CtaImage} alt="Cta" className="invert" />
-          </span>
+          <motion.div
+            className="mt-6 flex items-center justify-center gap-2"
+            variants={itemVariants}
+          >
+            <div className="flex -space-x-2">
+              <div className="w-8 h-8 rounded-full bg-neutral-700 ring-2 ring-black flex items-center justify-center text-xs font-bold text-white">
+                A
+              </div>
+              <div className="w-8 h-8 rounded-full bg-neutral-700 ring-2 ring-black flex items-center justify-center text-xs font-bold text-white">
+                B
+              </div>
+              <div className="w-8 h-8 rounded-full bg-neutral-700 ring-2 ring-black flex items-center justify-center text-xs font-bold text-white">
+                C
+              </div>
+            </div>
+            <p className="text-sm text-neutral-400">Trusted by 50+ clients</p>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 }

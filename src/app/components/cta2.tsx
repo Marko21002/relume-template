@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import MailImage from "../../../public/mail2.png";
 
 export default function Cta2() {
   return (
@@ -16,7 +15,7 @@ export default function Cta2() {
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <Image src={MailImage} alt="Newsletter" />
+          <Image src="/mail2.png" alt="Newsletter" width={288} height={288} />
         </motion.div>
 
         {/* Right Illustration */}
@@ -27,7 +26,13 @@ export default function Cta2() {
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <Image src={MailImage} alt="Newsletter" className="scale-x-[-1]" />
+          <Image
+            src="/mail2.png"
+            alt="Newsletter"
+            className="scale-x-[-1]"
+            width={288}
+            height={288}
+          />
         </motion.div>
 
         <div className="relative z-10 text-center">
@@ -41,6 +46,15 @@ export default function Cta2() {
             <p className="text-sm font-semibold uppercase tracking-widest text-neutral-500">
               NEWSLETTER
             </p>
+            <motion.div
+              className="my-4 lg:hidden"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Image src="/mail2.png" alt="Newsletter" width={80} height={80} />
+            </motion.div>
             <h2 className="mt-4 max-w-lg font-raleway text-4xl font-semibold text-black md:text-5xl">
               Get news delivered right to your inbox
             </h2>

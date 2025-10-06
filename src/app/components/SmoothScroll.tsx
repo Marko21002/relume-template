@@ -3,8 +3,9 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollSmoother);
+gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
 const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
