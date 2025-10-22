@@ -67,7 +67,7 @@ export default function Navbar() {
             transition={{ delay: 0.8 }}
           >
             <div className="flex gap-4">
-              <button className="px-3 cursor-pointer py-2 w-full sm:w-auto bg-white text-black ring ring-neutral-400 rounded-lg text-md font-semibold transition-colors hover:bg-neutral-100 flex items-center justify-center gap-2">
+              <button className="px-6 py-3 w-full sm:w-auto bg-white text-black ring ring-neutral-400 rounded-lg font-semibold transition-colors hover:bg-neutral-100 flex items-center justify-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -78,7 +78,7 @@ export default function Navbar() {
                 </svg>
                 Book a call
               </button>
-              <button className="px-3 cursor-pointer py-2 w-full sm:w-auto bg-black text-white rounded-lg text-md font-semibold transition-colors hover:bg-neutral-800">
+              <button className="px-6 py-3 w-full sm:w-auto bg-black text-white rounded-lg font-semibold transition-colors hover:bg-neutral-800">
                 Get a free re-design
               </button>
             </div>
@@ -157,7 +157,7 @@ export default function Navbar() {
         </div>
         <div className="flex flex-col items-center justify-center h-full space-y-8">
           <div className="w-full px-8 space-y-4">
-            <button className="w-full px-3 py-2 flex items-center justify-center gap-2 bg-white text-black ring ring-neutral-400 rounded-lg text-md font-semibold transition-colors hover:bg-neutral-100">
+            <button className="w-full px-6 py-3 flex items-center justify-center gap-2 bg-white text-black ring ring-neutral-400 rounded-lg font-semibold transition-colors hover:bg-neutral-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -168,7 +168,7 @@ export default function Navbar() {
               </svg>
               Book a call
             </button>
-            <button className="w-full px-3 py-2 bg-black text-white rounded-lg text-md font-semibold transition-colors hover:bg-neutral-800">
+            <button className="w-full px-6 py-3 bg-black text-white rounded-lg font-semibold transition-colors hover:bg-neutral-800">
               Get a free re-design
             </button>
           </div>

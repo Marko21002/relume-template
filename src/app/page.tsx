@@ -1,6 +1,6 @@
 import React from "react";
 import { Hero } from "./components/Hero";
-import Services from "./components/Services";
+import Services2 from "./components/Services2";
 import Pricing from "./components/Pricing";
 import Faq from "./components/Faq";
 import Cta from "./components/Cta";
@@ -10,11 +10,13 @@ import Contact from "./components/Contact";
 import Mission from "./components/Mission";
 import About from "./components/About";
 import Book from "./components/Book";
+import Frame from "./components/Frame";
 export default function Home() {
   return (
     <div>
+      <Frame />
       <Hero />
-      <Services />
+      <Services2 />
       <Portfolio />
       <Pricing />
       <Cta2 />

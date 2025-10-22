@@ -41,24 +41,22 @@ export const Hero = () => {
   return (
     <div className="px-[5%] pt-20 pb-12 max-w-[1200px] mx-auto md:pt-40 md:pb-24 lg:pt-44 lg:pb-28 flex flex-col items-center justify-center gap-12">
       <motion.div
-        className="flex flex-col items-center justify-center gap-4 max-w-3xl"
+        className="flex flex-col items-center justify-center gap-4 max-w-3xl pt-12 md:pt-0"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.div
+        {/* <motion.div
           className="text-sm font-semibold text-neutral-500"
           variants={itemVariants}
         >
           DESIGN THAT DELIVERS
-        </motion.div>
+        </motion.div> */}
         <motion.h1
-          className="text-4xl text-center md:text-10xl"
+          className="text-4xl text-center md:text-10xl font-raleway"
           variants={itemVariants}
         >
-          <span className="font-playfair-display italic">
-            We build websites that
-          </span>
+          <span className="font-bold font-raleway">We build websites that</span>
           <br />
           <span className="font-bold font-raleway ">
             {" "}
@@ -76,7 +74,7 @@ export const Hero = () => {
           className="flex w-full flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           variants={itemVariants}
         >
-          <button className="px-3 cursor-pointer py-2 w-full sm:w-auto bg-black text-white rounded-lg text-md font-semibold transition-colors hover:bg-neutral-800 flex items-center justify-center gap-2">
+          <button className="px-6 py-3 w-full sm:w-auto bg-black text-white rounded-lg font-semibold transition-colors hover:bg-neutral-800 flex items-center justify-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -87,7 +85,7 @@ export const Hero = () => {
             </svg>
             Book a Free Consultation
           </button>
-          <button className="px-3 cursor-pointer py-2 w-full sm:w-auto bg-white text-black ring ring-neutral-400 rounded-lg text-md font-semibold transition-colors hover:bg-neutral-100">
+          <button className="px-6 py-3 w-full sm:w-auto bg-white text-black ring ring-neutral-400 rounded-lg font-semibold transition-colors hover:bg-neutral-100">
             View Our Work
           </button>
         </motion.div>
